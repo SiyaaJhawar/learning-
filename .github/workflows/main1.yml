@@ -4,9 +4,10 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 jobs:
   call-workflow-passing-data:
-    uses: github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@main
+    uses: SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@main
     with:
       username: swati
     secrets: inherit
