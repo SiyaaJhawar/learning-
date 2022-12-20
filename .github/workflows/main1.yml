@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   call-workflow-passing-data:
-    uses: SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@main
+    uses: github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@main
     with:
       username: swati
     secrets: inherit
