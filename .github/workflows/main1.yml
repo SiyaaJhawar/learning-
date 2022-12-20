@@ -6,7 +6,7 @@ name: Call a reusable workflow
       - main
 jobs:
   call-workflow-passing-data:
-    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+    uses: SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@main
     with:
       username: swati
     secrets:  ${{ secrets.TOKEN }}
