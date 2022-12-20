@@ -1,12 +1,14 @@
 name: Reusable workflow
+
 on:
   workflow_call:
-   inputs:
-       username:
-        description: 'A username passed from the caller workflow'
-        default: 'john-doe'
-        required: false
+    inputs:
+      config-path:
+        required: true
         type: string
+    secrets:
+      token:
+        required: true
 
 jobs:
   print-username:
