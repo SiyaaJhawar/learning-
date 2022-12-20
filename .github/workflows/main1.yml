@@ -1,6 +1,6 @@
 name: Call a reusable workflow
 
-  on:
+on:
   pull_request:
     branches:
       - main
@@ -9,5 +9,5 @@ jobs:
     uses: SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@main
     with:
       username: swati
-    secrets:  ${{ secrets.TOKEN }}
+    secrets: inherit
  
