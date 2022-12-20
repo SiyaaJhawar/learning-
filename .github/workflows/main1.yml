@@ -3,7 +3,7 @@ name: Call a reusable workflow
 on:
   pull_request:
     branches:
-      - main
+      - none
   workflow_dispatch:
 jobs:
   call-workflow-passing-data:
@@ -11,4 +11,6 @@ jobs:
     with:
       username: swati
     secrets: inherit
+   
+       
  
