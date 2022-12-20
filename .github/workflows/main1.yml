@@ -7,4 +7,4 @@ on:
 
 jobs:
   call-workflow:
-    uses: 
+      uses: github.com/SiyaaJhawar/learning-/blob/main/.github/workflows/main.yml@v1
