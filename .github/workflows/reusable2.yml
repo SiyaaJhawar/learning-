@@ -5,7 +5,7 @@ on:
 
 jobs:
   job1:
-    uses: SiyaaJhawar/learning-/.github/workflows/called-reusable.yml@main
+    uses: SiyaaJhawar/learning-/.github/workflows/reusable.yml@main
 
   job2:
     runs-on: ubuntu-latest
