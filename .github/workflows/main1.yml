@@ -11,8 +11,9 @@ jobs:
   call-workflow:
     uses: SiyaaJhawar/learning-/.github/workflows/main.yml@main
     with:
-        config-path: .github/main.yml
-       
+     
+     config-path: .github/main.yml
+          
     secrets: inherit
       
    
