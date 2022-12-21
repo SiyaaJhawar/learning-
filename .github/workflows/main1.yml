@@ -10,9 +10,9 @@ jobs:
     uses: SiyaaJhawar/learning-/.github/workflows/main.yml@main
     with:
      
-     username: swati
+       username: swati
           
-    secrets: inherit 
+   secrets: inherit 
         token:${{secrets.TOKEN}}
        
       
