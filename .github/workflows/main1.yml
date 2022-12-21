@@ -12,8 +12,8 @@ jobs:
      
        username: swati
           
-    secrets: inherit 
-        token:${{secrets.TOKEN}}
+    secrets:  inherit
+        
        
       
       
