@@ -1,0 +1,26 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    
+    outputs:
+      name:
+      
+        value: ${{ jobs.job1.outputs.output1 }}
+      subject:
+        
+        value: ${{ jobs.example_job.outputs.output2 }}
+
+jobs:
+  job1:
+    name: Generate output
+    runs-on: ubuntu-latest
+  
+    outputs:
+      output1: ${{ steps.step1.outputs.name }}
+      output2: ${{ steps.step2.outputs.subject }}
+    steps:
+      - id: step1
+        run: echo "name=sweta" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "subject=science" >> $GITHUB_OUTPUT
