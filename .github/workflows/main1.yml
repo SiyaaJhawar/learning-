@@ -4,13 +4,16 @@ on:
   pull_request:
     branches:
       - none
-  workflow_dispatch:
+
+ 
+
 jobs:
   call-workflow:
     uses: SiyaaJhawar/learning-/.github/workflows/main.yml@main
     with:
        username: swati
     secrets: inherit
+      
    
        
  
