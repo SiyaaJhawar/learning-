@@ -9,7 +9,7 @@ on:
         value: ${{ jobs.job1.outputs.output1 }}
       subject:
         
-        value: ${{ jobs.example_job.outputs.output2 }}
+        value: ${{ jobs.job1.outputs.output2 }}
 
 jobs:
   job1:
