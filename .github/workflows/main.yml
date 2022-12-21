@@ -4,16 +4,15 @@ on:
   workflow_call:
     inputs:
       username:
-        default: 'john-doe'
         required: true
         type: string
     secrets:
       token:
         required: true
 jobs:
-  print-username:
+  example_job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print the input name to STDOUT
-        run: echo The username is ${{ inputs.username }}
+      - name: Run the hello world script
+        run: echo Hello, The username is ${{ inputs.username }}
