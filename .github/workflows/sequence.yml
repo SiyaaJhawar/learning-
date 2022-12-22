@@ -17,13 +17,13 @@ jobs:
     steps:
       - id: step1
         run: |
-         my_var1=Monday
-          echo "Day=$my_var1" >> $GITHUB_OUTPUT
+         my_var1=Day
+          echo "my_var1=Monday" >> $GITHUB_OUTPUT
       - id: step2
         
         run: |
-         my_var2=December
-          echo "Month=$my_var2" >> $GITHUB_OUTPUT
+         my_var2=Month
+          echo "my_var2=December" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
     needs: job1
