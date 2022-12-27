@@ -1,13 +1,13 @@
 on:
   workflow_dispatch:
     inputs:
-      Day: 'Monday'
-      Month: 'December'
-         required: true
-           type: string
+      Day: 
+      Month:
+        required: true
+        type: string
 env:
-     DAY: inputs.Day
-     MONTH:  inputs.Month
+     DAY: 'inputs.Day'
+     MONTH: 'inputs.Month'
 jobs:
   job1:
     runs-on: ubuntu-latest
