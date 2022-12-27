@@ -8,8 +8,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     env:
-     Day: Monday
-     Month: December
+     Day: 'Monday'
+     Month: 'December'
     outputs:
       output1: ${{ steps.step1.outputs.Day}}
       output2: ${{ steps.step2.outputs.Month}}
