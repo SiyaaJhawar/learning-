@@ -1,5 +1,8 @@
 on:
   workflow_dispatch:
+    inputs:
+      Day:
+      Month:
     
 jobs:
   job1:
