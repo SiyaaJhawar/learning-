@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      First: Swati
+      Second: Gupta
+      
+    steps:
+     - name: environment variables
+       if: ${{ env.First == 'Swati'}}
+        run:|
+        echo "${{env.First}}"
