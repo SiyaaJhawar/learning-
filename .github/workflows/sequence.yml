@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
    
     outputs:
-      output1: ${{ steps.step1.outputs.Day}}
-      output2: ${{ steps.step2.outputs.Month}}
+      output1: ${{ steps.step1.outputs.env.DAY}}
+      output2: ${{ steps.step2.outputs.env.MONTH}}
     steps:
       - id: step1
         run: echo "$DAY">> $GITHUB_OUTPUT
