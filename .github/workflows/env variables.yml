@@ -1,11 +1,12 @@
 on:
   workflow_dispatch:
+env:
+      First: Swati
+      Second: Gupta
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      First: Swati
-      Second: Gupta
+   
       
     steps:
      - name: environment variables
