@@ -17,9 +17,9 @@ jobs:
       output2: ${{ steps.step2.outputs.env.MONTH}}
     steps:
       - id: step1
-        run: echo '$DAY'>> $GITHUB_OUTPUT
+        run: echo '${{env.DAY}}'>> $GITHUB_OUTPUT
       - id: step2
-        run: echo '$MONTH'>> $GITHUB_OUTPUT
+        run: echo '${{env.MONTH}}'>> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
     needs: job1
