@@ -10,5 +10,4 @@ jobs:
     steps:
      - name: environment variables
        if: ${{ env.First == 'Swati'}}
-        run:|
-        echo "${{env.First}}"
+       run: echo "${{env.First}}"
