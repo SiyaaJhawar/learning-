@@ -11,3 +11,9 @@ jobs:
      - name: environment variables
        if: ${{ env.First == 'Swati'}}
        run: echo "${{env.First}}"
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    if: ${{always()}}
+    steps:
+      - run: echo $Second
