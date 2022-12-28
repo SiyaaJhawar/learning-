@@ -1,20 +1,18 @@
 on:
   workflow_dispatch:
     inputs:
-      Day: 
-      Month:
+      Day: Monday
+      Month: December
         required: true
         type: string
-env:
-     DAY: 'Monday'
-     MONTH: 'December'
+
 jobs:
   job1:
     runs-on: ubuntu-latest
    
     outputs:
-      output1: ${{ steps.step1.outputs.DAY}}
-      output2: ${{ steps.step2.outputs.MONTH}}
+      output1: ${{ steps.step1.outputs.Day}}
+      output2: ${{ steps.step2.outputs.Month}}
     steps:
       - id: step1
         run: echo $"DAY">> $GITHUB_OUTPUT
