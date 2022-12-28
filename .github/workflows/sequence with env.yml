@@ -6,8 +6,8 @@ on:
         required: true
         type: string
 env:
-  DAY: 'Monday'
-  MONTH: 'December'
+  DAY: Monday
+  MONTH: December
 jobs:
   job1:
     runs-on: ubuntu-latest
