@@ -11,4 +11,4 @@ jobs:
           gh api /octocat
           gh api --header 'Accept: application/vnd.github+json' --header 'X-GitHub-Api-Version:2022-11-28' --method GET /octocat
           gh api --header 'Accept: application/vnd.github+json' --method GET /repos/octocat/Spoon-Knife/issues
-          jq '.[] | {title: .title, authorID: .user.id}' data.json
+         
