@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Make Request
       id: myRequest
-      uses: fjogeleit/http-request-action@main
+      uses: SiyaaJhawar/learning-@main
       with:
        url: "http://yoursite.com/api"
 
