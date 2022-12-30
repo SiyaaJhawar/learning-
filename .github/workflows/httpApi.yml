@@ -15,16 +15,4 @@ jobs:
         password: ${{ secrets.AWX_PASSWORD }}
         customHeaders: '{"Content-Type": "application/json"}'
         data: '{"key_1": "value_1", "key_2": "value_2"}'
-  jobs2:
-      runs-on: ubuntu-latest
-      steps:   
-      - name: Make Request
-        id: myRequest
-        uses: fjogeleit/http-request-action@main
-        with:
-          url: "http://yoursite.com/api"
-      - name: Show Response
-        run: |
-         echo ${{ steps.myRequest.outputs.response }}
-         echo ${{ steps.myRequest.outputs.headers }}
-         echo ${{ fromJson(steps.myRequest.outputs.response).field_you_want_to_access }}
+ 
