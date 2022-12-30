@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
-      uses: fjogeleit/http-request-action@main
+      uses: https://github.com/SiyaaJhawar@main
       with:
         url: 'https://ansible.io/api/v2/job_templates/84/launch/'
         method: 'POST'
