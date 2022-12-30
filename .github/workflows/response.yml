@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deployment:
+  job1:
     runs-on: ubuntu-latest
     steps:
     - name: Make Request
