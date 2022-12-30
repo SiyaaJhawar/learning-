@@ -1,8 +1,8 @@
  on:
   workflow_dispatch:
   
-  name: 'HTTP Request Action'
-  description: 'Create any HTTP Request'
+ name: 'HTTP Request Action'
+ description: 'Create any HTTP Request'
   inputs:
     url:
         description: 'Request URL'
@@ -53,11 +53,11 @@
     httpsCA:
         description: 'Certificate authority as string in PEM format'
         required: false
-outputs:
+    outputs:
     response:
         description: 'HTTP Response Content'
     headers:
         description: 'HTTP Response Headers'
-runs:
+    runs:
     using: 'node16'
     main: 'dist/index.js'
