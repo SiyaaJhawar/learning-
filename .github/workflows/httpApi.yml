@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
-      uses: https://github.com/SiyaaJhawar@main
+      uses: SiyaaJhawar/learning-@main
       with:
         url: 'https://ansible.io/api/v2/job_templates/84/launch/'
         method: 'POST'
