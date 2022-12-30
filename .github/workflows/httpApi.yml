@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
-      uses: fjogeleit/http-request-action@v1
+      uses: fjogeleit/http-request-action@main
       with:
         url: 'https://ansible.io/api/v2/job_templates/84/launch/'
         method: 'POST'
@@ -20,7 +20,7 @@ jobs:
       steps:   
       - name: Make Request
         id: myRequest
-        uses: fjogeleit/http-request-action@v1
+        uses: fjogeleit/http-request-action@main
         with:
           url: "http://yoursite.com/api"
       - name: Show Response
