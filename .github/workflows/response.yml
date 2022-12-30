@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Make Request
       id: myRequest
-      uses: SiyaaJhawar/learning-@main
+      uses: SiyaaJhawar/learning-@response.yml
       with:
        url: "http://yoursite.com/api"
 
