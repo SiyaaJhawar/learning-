@@ -10,7 +10,7 @@ jobs:
       
     steps:
      - name: environment variables
-       if: ${{ env.First == 'Swati'}}
+       if: ${{ env.MY_VARIABLE }}
        run: echo "${{env.First}}"
   job2:
     runs-on: ubuntu-latest
