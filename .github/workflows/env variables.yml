@@ -1,20 +1,15 @@
 on:
   workflow_dispatch:
-env:
-      First: Swati
-      Second: Gupta
+
 jobs:
   job1:
     runs-on: ubuntu-latest
-   
-      
     steps:
-     - name: environment variables
-       if: ${{ env.MY_VARIABLE }}
-       run: echo "${{env.First}}"
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-    if: ${{always()}}
-    steps:
-      - run: echo "${{env.Second}}"
+     - name: Set the value
+       id: step_one
+       run: |
+         echo "action_state=yellow" >> $GITHUB_ENV
+     - name: Use the value
+       id: step_two
+       run: |
+        echo "${{ env.action_state }}"
