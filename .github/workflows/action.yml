@@ -40,22 +40,5 @@ on:
      customHeaders:
         description: 'Custom HTTP Headers'
         required: false
-     preventFailureOnNoResponse:
-        description: 'Prevent this Action to fail if the request respond without an response'
-        required: false
-     ignoreStatusCodes:
-        description: 'Prevent this Action to fail if the request respond with one of the configured StatusCodes'
-        required: false
-     escapeData:
-        description: 'Escape newlines in data string content'
-        required: false
-     httpsCA:
-        description: 'Certificate authority as string in PEM format'
-        required: false
-     outputs:
-     response:
-        description: 'HTTP Response Content'
-     headers:
-        description: 'HTTP Response Headers'
-     runs:
-         
+     
+    
