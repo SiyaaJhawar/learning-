@@ -2,62 +2,61 @@
   workflow_dispatch:
   
  name: 'HTTP Request Action'
- description: 'Create any HTTP Request'
-  inputs:
-    url:
-        description: 'Request URL'
-        required: true
-    method:
+    inputs:
+         url:
+         description: 'Request URL'
+         required: true
+  method:
         description: 'Request Method'
         required: false
         default: 'POST'
-    contentType:
+  contentType:
         description: 'Content Type'
         required: false
-    data:
+ data:
         description: 'Request Body as JSON String'
         required: false
         default: '{}'
-    files:
+ files:
         description: 'Map of absolute file paths as JSON String'
         required: false
         default: '{}'
-    file:
+ file:
         description: 'A single absolute file path'
         required: false
-    username:
+ username:
         description: 'Auth Username'
         required: false
-    password:
+ password:
         description: 'Auth Password'
         required: false
-    timeout:
+ timeout:
         description: 'Request Timeout in Sec'
         required: false
         default: '5000'
-    bearerToken:
+ bearerToken:
         description: 'Bearer Authentication Token'
         required: false
-    customHeaders:
+ customHeaders:
         description: 'Custom HTTP Headers'
         required: false
-    preventFailureOnNoResponse:
+ preventFailureOnNoResponse:
         description: 'Prevent this Action to fail if the request respond without an response'
         required: false
-    ignoreStatusCodes:
+ ignoreStatusCodes:
         description: 'Prevent this Action to fail if the request respond with one of the configured StatusCodes'
         required: false
-    escapeData:
+ escapeData:
         description: 'Escape newlines in data string content'
         required: false
-    httpsCA:
+ httpsCA:
         description: 'Certificate authority as string in PEM format'
         required: false
-    outputs:
-    response:
-        description: 'HTTP Response Content'
-    headers:
-        description: 'HTTP Response Headers'
-    runs:
-    using: 'node16'
-    main: 'dist/index.js'
+        outputs:
+         response:
+         description: 'HTTP Response Content'
+        headers:
+         description: 'HTTP Response Headers'
+        runs:
+        using: 'node16'
+        main: 'dist/index.js'
