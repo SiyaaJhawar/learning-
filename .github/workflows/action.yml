@@ -21,19 +21,14 @@ on:
         description: 'Map of absolute file paths as JSON String'
         required: false
         default: '{}'
-     file:
-        description: 'A single absolute file path'
-        required: false
+     
      username:
         description: 'Auth Username'
         required: false
      password:
          description: 'Auth Password'
          required: false
-     timeout:
-        description: 'Request Timeout in Sec'
-        required: false
-        default: '5000'
+    
      bearerToken:
         description: 'Bearer Authentication Token'
         required: false
