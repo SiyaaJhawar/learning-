@@ -13,8 +13,12 @@ jobs:
        id: step_two
        run: |
         echo "${{ env.action_state }}"
-        - name: Set color
-        id: random-color-generator
-        run: echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
-        - name: Get color
-        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+  job2:  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set the value in bash
+      id: step_one
+      run: |
+        echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
+        curl https://example.com >> $GITHUB_ENV
+        echo 'EOF' >> $GITHUB_ENV
