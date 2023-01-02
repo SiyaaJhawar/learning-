@@ -13,3 +13,10 @@ jobs:
        id: step_two
        run: |
         echo "${{ env.action_state }}"
+        steps:
+        - name: Set the value in bash
+          id: step_one
+          run: |
+          echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
+          curl https://example.com >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
