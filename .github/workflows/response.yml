@@ -6,18 +6,18 @@ on:
         required: true
      method:
         description: 'Request Method'
-        required: false
+        required: true
         default: 'POST'
      contentType:
         description: 'Content Type'
         required: false
      data:
         description: 'Request Body as JSON String'
-        required: false
+        required: true
         default: '{}'
      files:
         description: 'Map of absolute file paths as JSON String'
-        required: false
+        required: true
         default: '{}'
      
      username:
