@@ -16,7 +16,7 @@ jobs:
    environment: 
     name: development
    steps: 
-     - uses: actions/setup-go@v3.5.0
+     - uses: SiyaaJhawar/learning-@main
      
        with:
          envkey_ENVIRONMENT: ${{secrets.ENVIRONMENT}}
