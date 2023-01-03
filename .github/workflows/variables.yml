@@ -15,15 +15,13 @@ jobs:
    runs-on: ubuntu-latest
    environment: 
     name: development
-   steps: 
-     - uses: SiyaaJhawar/learning-@main
-     
-       with:
-         envkey_ENVIRONMENT: ${{secrets.ENVIRONMENT}}
+    url: 'http://test.myapp.com'
+   steps:
+   -   name : deploy
+       run: echo i am deploying
+      
          
-     - name: Deployment
-       run: |
-         echo:'This is a development'
+   
        
        
        
