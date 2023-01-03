@@ -10,7 +10,7 @@ on:
 
 jobs:
   deployment:
-   name: 'Swati'
+  
    if: github.event.ref== 'refs/heads/dev'
    runs-on: ubuntu-latest
    environment: 
