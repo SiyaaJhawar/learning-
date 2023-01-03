@@ -1,0 +1,25 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+   name: 'Swati'
+   if: github.event.ref== 'refs/heads/dev'
+   runs-on: ubuntu-latest
+   environment: 
+    name: development
+   steps: 
+     - uses: actions/checkout@v1
+     - uses: actions/set-up-java@v1
+       with:
+          java-version: '12.x'
+     - uses: SpicyPizza/create-envfile@v1.3.0
+       with:
+         envkey_ENVIRONMENT: ${{secrets.ENVIRONMENT}}
+    
+  
+     
