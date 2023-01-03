@@ -1,8 +1,11 @@
+
+
 name: Deployment
 
 on:
-  workflow_run:
-  
+  push:
+    branches:
+      - main
 
 jobs:
   deployment:
@@ -13,13 +16,11 @@ jobs:
     name: development
    steps: 
      - uses: actions/checkout@v1
-     - uses: actions/set-up-java@v1
-       with:
-          java-version: '12.x'
-     - uses: SpicyPizza/create-envfile@v1.3.0
+     
        with:
          envkey_ENVIRONMENT: ${{secrets.ENVIRONMENT}}
-     - uses:  SiyaaJhawar/learning-/@main
+       
+       
      
     
   
