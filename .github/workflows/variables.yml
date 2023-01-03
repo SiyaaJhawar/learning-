@@ -16,7 +16,7 @@ jobs:
    environment: 
     name: development
    steps: 
-     - uses: actions/checkout@v1
+     - uses: actions/checkout@main
      
        with:
          envkey_ENVIRONMENT: ${{secrets.ENVIRONMENT}}
