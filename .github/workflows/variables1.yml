@@ -13,6 +13,8 @@ jobs:
         uses: SiyaaJhawar/learning-@main
         with:
           envkey_ENVIRONMENT: ${{env.ENVIRONMENT}}
-          envkey_: "123456abcdef"
-         
+          envkey_URL: ${{env.URL}}
           file_name: .env
+      - name: Verify envfile
+        run: |
+         echo: "$env.ENVIRONMENT"
