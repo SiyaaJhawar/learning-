@@ -10,15 +10,14 @@ on:
 
 jobs:
   job1:
-  
-   if: github.event.ref== 'refs/heads/dev'
    runs-on: ubuntu-latest
-   environment: 
-    name: development
-    url: 'http://test.myapp.com'
    steps:
-   -   name : deploy
-       run: echo i am deploying
+   - name: Get secret from base64
+   env:
+    KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+    run: |
+     echo import certificate from secrets and regenerate the file
+     echo $KEYSTORE_BASE64 | base64 -d > $RUNNER_TEMP/my_production.keystore
       
          
    
