@@ -8,14 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+     - uses: actions/checkout@v2
       
 
-      - name: check env
-        uses: SiyaaJhawar/learning-@main
-        with:
+     - name: check env
+       uses: SiyaaJhawar/learning-@main
+       with:
           envkey_ENVIRONMENT: ${{env.ENVIRONMENT}}
           envkey_URL: ${{env.URL}}
           file_name: .env
-      - name: Verify envfile
-        run: |
-         echo: "$env.ENVIRONMENT"
+     - name: Verify envfile
+       run: |
+           echo: "$env.ENVIRONMENT"
