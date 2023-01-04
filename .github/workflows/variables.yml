@@ -13,12 +13,13 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: development
+      - name: variable
         run: echo global values
         
   job2:
     needs: job1
     runs-on: ubuntu-latest
+    environment : development
     steps:
     -  name: Get secret from base 64
        env:
