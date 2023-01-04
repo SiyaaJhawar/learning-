@@ -1,9 +1,10 @@
-name: Test action
+name: Environment variable
 
-on: [ push ]
+on: 
+     workflow_dispatch:
 
 jobs:
-  test-general:
+  variable:
     runs-on: ubuntu-latest
 
     steps:
