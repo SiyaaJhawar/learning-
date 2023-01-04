@@ -23,10 +23,10 @@ jobs:
     steps:
     -  name: Get secret from base 64
        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          ACCOUNT_NUMBER: ${{ secrets.ACCOUNT_NUMBER }}
        run: |
           echo import certificate from secrets and regenerate the file
-          echo $KEYSTORE_BASE64 | base64 -d > $RUNNER_TEMP/my_production.keystore
+          echo $ACCOUNT_NUMBER 
 
       
          
