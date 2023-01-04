@@ -12,7 +12,7 @@ jobs:
       
 
      - name: check env
-       uses: SiyaaJhawar/learning-@main
+       uses: SiyaaJhawar/learning-/action.yml@main
        with:
           envkey_ENVIRONMENT: ${{env.ENVIRONMENT}}
           envkey_URL: ${{env.URL}}
