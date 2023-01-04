@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     environment : development
     steps:
-    -  name: Get secret from base 64
+    -  name: Get secret 
        env:
           ACCOUNT_NUMBER: ${{ secrets.ACCOUNT_NUMBER }}
        run: |
