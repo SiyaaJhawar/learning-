@@ -22,13 +22,15 @@ jobs:
     environment : development
     steps :
     -  name: step1 
-       run:  "ACCOUNT_NUMBER= ${{ env.ACCOUNT_NUMBER }}"
+      
+         
+       run:  "ACCOUNT_NUMBER= ${{ secrets.ACCOUNT_NUMBER }}"
          
      
          
          
     - name : step2
-      run: echo " The employeeid is:${{env.EMPLOYEE_ID}}"
+      run: echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
     
 
       
