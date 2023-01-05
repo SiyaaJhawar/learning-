@@ -27,7 +27,7 @@ jobs:
          
          
        run: |  
-         echo "ACCOUNT_NUMBER= ${{ secrets.ACCOUNT_NUMBER }}"
+         echo "ACCOUNT_NUMBER= ${{ env.ACCOUNT_NUMBER }}"
          
      
          
