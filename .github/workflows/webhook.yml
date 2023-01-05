@@ -10,15 +10,6 @@ on:
   repository_dispatch:
    types:
      - webhook
-jobs:
-  
- webhook_test:
-   runs-on: ubuntu-latest
 
-   
-   steps:
-   - name : webhook
-     run: |
-       echo : "client_payload: {{tojson(github.event.client_payload)}}"
      
       
