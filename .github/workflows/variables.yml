@@ -24,6 +24,7 @@ jobs:
     -  name: Get secret 
        env:
           ACCOUNT_NUMBER: ${{ secrets.ACCOUNT_NUMBER }}
+          EMPLOYEE_ID : ${{ secrets.EMPLOYEE_ID}}
        run: |
          
           echo $ACCOUNT_NUMBER 
