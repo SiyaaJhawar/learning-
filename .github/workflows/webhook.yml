@@ -12,4 +12,4 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-        curl -X GET "https://catfact.ninja/facts"
+        curl -X GET "https://apipheny.io"
