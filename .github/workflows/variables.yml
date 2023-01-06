@@ -22,10 +22,6 @@ jobs:
     environment : development
     steps :
     -  name: step1 
-       
-       
-         
-         
        run: |  
          echo "ACCOUNT_NUMBER= ${{ secrets.ACCOUNT_NUMBER }}"
          
