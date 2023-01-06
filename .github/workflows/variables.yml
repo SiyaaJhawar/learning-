@@ -25,7 +25,7 @@ jobs:
       
        run: |  
          echo "ACCOUNT_NUMBER= ${{ secrets.ACCOUNT_NUMBER }}"
-         
+          echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
      
   job3:     
      needs: job2
@@ -34,6 +34,7 @@ jobs:
       -  name: step1  
          run: |
             echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
+            echo "ACCOUNT_NUMBER= ${{ secrets.ACCOUNT_NUMBER }}"
     
 
       
