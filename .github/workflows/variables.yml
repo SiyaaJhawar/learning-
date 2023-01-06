@@ -31,8 +31,8 @@ jobs:
      runs-on: ubuntu-latest
      steps :
       -  name: step1  
-  
-         run: echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
+         run: |
+            echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
     
 
       
