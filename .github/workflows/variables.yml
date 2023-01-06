@@ -22,7 +22,7 @@ jobs:
     environment : development
     steps :
     -  name: step1 
-    
+       
        
          
          
@@ -30,10 +30,13 @@ jobs:
          echo "ACCOUNT_NUMBER= ${{ secrets.ACCOUNT_NUMBER }}"
          
      
-         
-         
-    -   name : step2
-        run: echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
+  job3:     
+     needs: job2
+     runs-on: ubuntu-latest
+     steps :
+      -  name: step1  
+  
+         run: echo " The employeeid is:${{secrets.EMPLOYEE_ID}}"
     
 
       
