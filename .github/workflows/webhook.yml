@@ -13,5 +13,4 @@ jobs:
     - name: REST API with curl
       run: |
         curl -X GET "https://apipheny.io/"
-        curl \
-         -H "Accept: application/vnd.github+json" \
+       
