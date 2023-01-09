@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-        curl -X GET "https://apipheny.io/"
+        
         curl -X GET "https://dummy.restapiexample.com/api/v1/create"
+        curl -X GET "https://apipheny.io/"
+         --header 'content-type: application/json' 
        
