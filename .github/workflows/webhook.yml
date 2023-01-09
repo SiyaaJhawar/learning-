@@ -15,5 +15,5 @@ jobs:
         
         curl -X GET "https://dummy.restapiexample.com/api/v1/create"
         curl -X GET "https://apipheny.io/"
-         --header 'content-type: application/json' 
+         
        
