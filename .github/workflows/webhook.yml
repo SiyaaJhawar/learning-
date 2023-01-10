@@ -5,6 +5,7 @@ on:
     tags:
       - '**'
   workflow_dispatch:
+  repository_dispatch:
  
 jobs:
   run-updater:
