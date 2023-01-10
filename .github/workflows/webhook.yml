@@ -15,7 +15,7 @@ jobs:
       run: |
          curl \
          -H "Accept: application/vnd.github+json" \
-         -H "Authorization: Bearer <SiyaaJhawar>"\
+        
          https://www.boredapi.com/api/activity
  
 
