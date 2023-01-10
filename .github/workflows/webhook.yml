@@ -16,5 +16,6 @@ jobs:
         curl -X GET "https://dummy.restapiexample.com/api/v1/create"
         curl -X GET "https://apipheny.io/"
         curl -X GET "https://www.boredapi.com/api/activity"
+        curl -X GET "https://t.me/logicApi"
          
        
