@@ -13,8 +13,9 @@ jobs:
     - name: REST API with curl
       run: |
         
-        
+        curl -d '{"key1":"value1", "key2":"value2"}'
+        curl -H "Content-Type: application/json"
         curl -X GET "https://www.boredapi.com/api/activity"
-        curl -H "Accept: application/json"
+       
          
        
