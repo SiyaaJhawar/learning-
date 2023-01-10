@@ -13,8 +13,8 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-         curl -X GET "https://www.boredapi.com/api/activity"
-         curl -d '{"key1":"value1", "key2":"value2"}'
+         curl -X GET https://www.boredapi.com/api/activity
+       
          curl -H "Content-Type: application/json"
        
          
