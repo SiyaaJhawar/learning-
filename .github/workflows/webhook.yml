@@ -15,6 +15,6 @@ jobs:
         
         
         curl -X GET "https://www.boredapi.com/api/activity"
-        curl -H "Content-Type: application/json"
+        curl -H "Accept: application/json"
          
        
