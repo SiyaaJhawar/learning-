@@ -13,8 +13,11 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-         curl https://www.boredapi.com/api/activity
-           -H   "Accept: application/json"
+          curl -X GET "https://www.boredapi.com/api/activity"
+          curl -H "Accept: application/vnd.github+json"
+ 
+
+   
        
          
        
