@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-         curl -X GET https://www.boredapi.com/api/activity
+         curl -X GET "https://www.boredapi.com/api/activity"
        
          curl -H "Content-Type: application/json"
        
