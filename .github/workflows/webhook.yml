@@ -15,6 +15,6 @@ jobs:
         
         
         curl https://www.boredapi.com/api/activity
-          -H "Accept: application/json"
+            "Accept: application/json"
          
        
