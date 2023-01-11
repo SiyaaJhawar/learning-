@@ -16,7 +16,8 @@ jobs:
         curl --request GET \
          --url "https://www.boredapi.com/api/activity" \
          --header "Accept: application/vnd.github+json" \
-        --header "Authorization: Bearer YOUR-TOKEN" \
+         --header "Authorization: Bearer YOUR-TOKEN" > data.json
+         jq '.[] | {acivity: .activity, type: .type}' data.json
          
         
  
