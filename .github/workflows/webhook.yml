@@ -14,9 +14,9 @@ jobs:
     - name: REST API with curl
       run: |
         curl --request GET \
-         --url "https://www.boredapi.com/api/activity" \
+         --url "https://www.boredapi.com/api/activity" | jq
          --header "Accept: application/vnd.github+json" \
-         --header "Authorization: Bearer YOUR-TOKEN" > data.json
+         
          
         
         
