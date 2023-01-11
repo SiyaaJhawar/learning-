@@ -16,7 +16,7 @@ jobs:
         curl --request GET \
          --url "https://www.boredapi.com/api/activity" \
          --header "Accept: application/vnd.github+json" \
-         jq '.[] | {title: .title, authorID: .user.id}' data.json
+         jq '.[] | {key: .key, value: .value}' data.json
         
         
         
