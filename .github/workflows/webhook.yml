@@ -16,7 +16,7 @@ jobs:
         curl --request GET \
          --url "https://www.boredapi.com/api/activity" \
          --header "Accept: application/vnd.github+json" \
-         echo '::set-output name=someField::'$(jq -r '.someField' data.json)
+         jq '.[] | {title: .title, authorID: .user.id}' data.json
         
         
         
