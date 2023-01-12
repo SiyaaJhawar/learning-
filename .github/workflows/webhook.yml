@@ -14,7 +14,7 @@ jobs:
     - name: REST API with curl
       run: |
         curl --request GET \
-         --url "https://api.coinbase.com/v2/currencies" | jq
+         --url "https://www.boredapi.com/api/activity" | jq
          
         
          
