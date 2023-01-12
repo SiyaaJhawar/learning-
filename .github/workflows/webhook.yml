@@ -16,7 +16,7 @@ jobs:
         curl --request GET \
          --url "https://www.boredapi.com/api/activity" | jq
         
-         data: '{"key_1": "value_1", "key_2": "value_2"}'
+        
          
          
         
