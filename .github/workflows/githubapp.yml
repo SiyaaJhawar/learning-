@@ -15,4 +15,4 @@ jobs:
        echo GITHUB_TOKEN=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
        curl https://api.github.com/repos/octodocs-test/test | jq
        curl -i -H "Authorization: Bearer TOKEN" https://api.github.com/repos/octodocs-test/test
-       curl -i -H "Authorization: Bearer TOKEN" -d '{"title":"Hello World"}' https://api.github.com/repos/SiyaaJhawar/learning-/REPO/issues
+       curl -i -H "Authorization: Bearer TOKEN" -d '{"title":"Hello World"}' https://api.github.com/SiyaaJhawar/learning-/issues
