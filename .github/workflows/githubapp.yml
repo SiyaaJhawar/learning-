@@ -1,0 +1,15 @@
+on:
+  push:
+    tags:
+      - '**'
+  workflow_dispatch:
+ 
+ 
+jobs:
+  run-updater:
+    runs-on: ubuntu-latest
+    steps:
+    - name: github app
+      run: |
+       echo GITHUB_TOKEN=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
+     
