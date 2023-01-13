@@ -1,3 +1,4 @@
+name: "githubapp"
 on:
   push:
     tags:
