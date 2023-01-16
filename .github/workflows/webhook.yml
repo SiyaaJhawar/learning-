@@ -17,8 +17,8 @@ jobs:
         --url "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
         --header "Authorization: Bearer YOUR-TOKEN" > data.json
-        jq '.[]' | {participants: .number} data.json
-        jq -r '.[].key,.[].type' data.json
+        jq '.[.type]' |  data.json
+        
         
        
         
