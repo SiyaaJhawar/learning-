@@ -13,6 +13,6 @@ jobs:
     - name: github app
       
       run: |
-       echo application_id:${{secrets.application_id}}
-       echo application_privatekey:${{secrets.application_privatekey}}
+       echo application_id:${{secrets.APPLICATION_ID}}
+       echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
       
