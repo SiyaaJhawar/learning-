@@ -18,6 +18,7 @@ jobs:
         --header "Accept: application/vnd.github+json" \
         --header "Authorization: Bearer YOUR-TOKEN" > data.json
             jq '.[] | .price'
+               [{"price":0.5}]
             
               
            
