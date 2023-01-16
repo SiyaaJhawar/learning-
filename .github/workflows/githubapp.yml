@@ -11,9 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: github app
+      
       run: |
-       echo GITHUB_TOKEN=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
-       curl -v -H "Authorization: Bearer TOKEN" https://api.github.com/repos/SiyaaJhawar/learning- | jq
-       curl -H "X-GitHub-Api-Version: 2022-11-28" \
-       https://api.github.com/SiyaaJhawar/learning-/issues 
+       echo application_id:${{secrets.application_id}}
+       echo application_privatekey:${{secrets.application_privatekey}}
       
