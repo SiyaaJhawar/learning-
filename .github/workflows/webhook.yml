@@ -13,11 +13,10 @@ jobs:
     - name: REST API with curl
       run: |
         curl --request GET \
-        --url "https://www.boredapi.com/api/activity" | jq
+        --url "https://www.boredapi.com/api/activity" 
         var resData = json.decode(response.body);
         Map myMap = resData;
-
-         myMap.forEach((key, value) {
+        myMap.forEach((key, value) {
            print('$key : $value');
          }); 
          
