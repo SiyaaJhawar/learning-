@@ -14,6 +14,6 @@ jobs:
     - name: REST API with curl
       run: |
         curl "https://www.boredapi.com/api/activity" | jq 
-        curl "https://www.boredapi.com/api/activity" | jq -r '.[]'
+        curl "https://www.boredapi.com/api/activity" | jq -r '.[] | [.activity, .type, .participants]'
         
         
