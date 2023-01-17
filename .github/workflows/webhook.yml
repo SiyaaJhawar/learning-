@@ -17,7 +17,11 @@ jobs:
         --url "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
         --header "Authorization: Bearer YOUR-TOKEN" 
-        jq '.activity, .participants, .key'  
+          var resData = json.decode(response.body);
+          Map myMap = resData;
+          myMap.forEach((key, value) {
+          print('$key : $value');
+           });
         
         
        
