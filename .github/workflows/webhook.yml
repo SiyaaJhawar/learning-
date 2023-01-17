@@ -19,9 +19,10 @@ jobs:
         --header "Authorization: Bearer YOUR-TOKEN" 
           var resData = json.decode(response.body);
           Map myMap = resData;
+
           myMap.forEach((key, value) {
-          print('$key : $value');
-          });
+            print('$key : $value');
+            });
         
         
        
