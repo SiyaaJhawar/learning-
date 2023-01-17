@@ -15,11 +15,11 @@ jobs:
         curl --request GET \
         --url "https://www.boredapi.com/api/activity" | jq
         var resData = json.decode(response.body);
-Map myMap = resData;
+        Map myMap = resData;
 
-myMap.forEach((key, value) {
-  print('$key : $value');
-}); 
+         myMap.forEach((key, value) {
+           print('$key : $value');
+         }); 
          
          
         
