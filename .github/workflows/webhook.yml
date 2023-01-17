@@ -13,17 +13,8 @@ jobs:
     - name: REST API with curl
       run: |
         curl --request GET \
-        --url "https://www.boredapi.com/api/activity" \
-       
-         if let dictionary = json.object {
-
-              for (key, value) in dictionary {
-
-               println("key: \(key), value: \(value)")
-
-        }
-
-        }
+        --url "https://www.boredapi.com/api/activity" | jq
+         for (JsonObject::iterator it=root.begin(); it!=root.end(); ++it) { Serial.println(it->key); Serial.println(it->value.asString()); }
         
         
        
