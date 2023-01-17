@@ -14,7 +14,7 @@ jobs:
       run: |
         curl --request GET \
         --url "https://www.boredapi.com/api/activity" 
-        var resData = jq;
+        var resData = data.json;
         Map myMap = resData;
         myMap.forEach(key, value) {
            print('$key : $value');
