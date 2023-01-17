@@ -17,7 +17,10 @@ jobs:
         --header "Accept: application/vnd.github+json" \
          --header "Authorization: Bearer YOUR-TOKEN" 
          count= jq '.[]' 
-        
+        Map myMap = resData;
+        myMap.forEach((key, value) {
+           print('$key : $value');
+         }); 
          
          
         
