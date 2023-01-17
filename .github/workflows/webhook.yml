@@ -16,9 +16,9 @@ jobs:
         --url "https://www.boredapi.com/api/activity" 
         var resData = json.decode(response.body);
         Map myMap = resData;
-        myMap.forEach((key, value) {
+        myMap.forEach(key, value) {
            print('$key : $value');
-         }); 
+         }; 
          
          
         
