@@ -16,12 +16,15 @@ jobs:
         --url "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
         --header "Authorization: Bearer YOUR-TOKEN" 
-          var resData = json.decode(response.body);
-          Map myMap = resData;
+         if let dictionary = json.object {
 
-          myMap.forEach((key, value) {
-            print('$key : $value');
-            });
+              for (key, value) in dictionary {
+
+               println("key: \(key), value: \(value)")
+
+        }
+
+        }
         
         
        
