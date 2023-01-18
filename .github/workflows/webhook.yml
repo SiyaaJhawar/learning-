@@ -16,11 +16,9 @@ jobs:
         --url "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
          --header "Authorization: Bearer YOUR-TOKEN" 
-         count= jq '.[]' 
-        Map myMap = count;
-        myMap.forEach((key, value) {
-           print('$key : $value');
-         }); 
+         
+        var keys=json.parse(response.body).keys();
+        var value=keys[0];
          
          
         
