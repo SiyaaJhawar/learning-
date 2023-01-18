@@ -15,7 +15,7 @@ jobs:
         
         curl -Ss "https://www.boredapi.com/api/activity" |\
          jq -r '.[] | @uri' |\
-         while read key
+         while read api
          do
             curl -Ss "https://www.boredapi.com/api/activity"
          done | jq 'if type == "array" then .[] | .id elif type == "object" then .id else empty end'
