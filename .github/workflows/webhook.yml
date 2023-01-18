@@ -12,8 +12,7 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-        curl --request GET \
-        --url "https://www.boredapi.com/api/activity" \
+        curl "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
         for i in $(echo $api_response | jq -r ".[]")
         do
