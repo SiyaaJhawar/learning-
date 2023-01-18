@@ -13,9 +13,9 @@ jobs:
     - name: REST API with curl
       run: |
         curl --request GET \
-        --url "https://www.boredapi.com/api/activity" | jq
+        --url "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
-        for (auto it = j["url"].begin(); it != j["url"].end(); ++it)
+        for (auto it = responseJson["url"].begin(); it != responseJson["url"].end(); ++it)
         {
                std::cout << it.key() << " | " << it.value() << "\n";
         }
