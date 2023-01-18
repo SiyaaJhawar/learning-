@@ -15,15 +15,15 @@ jobs:
         curl "https://www.boredapi.com/api/activity" | jq
         
       
-           //    if let dictionary = json.object {
+           #    if let dictionary = json.object {
   
-           // for (key, value) in dictionary {
+           # for (key, value) in dictionary {
 
-          //     println("key: \(key), value: \(value)")
+            #   println("key: \(key), value: \(value)")
 
-        //     }
+           # }
 
-           //   }
+           #  }
          
          
         
