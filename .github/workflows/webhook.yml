@@ -17,7 +17,7 @@ jobs:
         --header "Accept: application/vnd.github+json" \
          --header "Authorization: Bearer YOUR-TOKEN" 
          
-        for (auto it = j["https://www.boredapi.com/api/activity"].begin(); it != j["https://www.boredapi.com/api/activity"].end(); ++it)
+        for (auto it = j["url"].begin(); it != j["url"].end(); ++it)
         {
                std::cout << it.key() << " | " << it.value() << "\n";
         }
