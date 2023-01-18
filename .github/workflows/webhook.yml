@@ -17,7 +17,7 @@ jobs:
         --header "Accept: application/vnd.github+json" \
          --header "Authorization: Bearer YOUR-TOKEN" 
          
-        var keys=json.parse(response.body).keys();
+        var keys=JSON.parse(response.body).keys();
         var value=keys[0];
          
          
