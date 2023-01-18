@@ -14,7 +14,7 @@ jobs:
       run: |
         
         curl -Ss "https://www.boredapi.com/api/activity" |\
-         jq -r '.[] | @uri' |\
+         jq -r '.[] | @activity' |\
          while read api
          do
             curl -Ss "https://www.boredapi.com/api/activity"
