@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-        curl "https://www.boredapi.com/api/activity" | jq
+        curl "https://www.boredapi.com/api/activity"
          jq 'to_entries|map([.key] + .value.a|map(tostring)|join(" "))|.[]'
          
         #while read -r "https://www.boredapi.com/api/activity"; do
