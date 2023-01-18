@@ -15,10 +15,10 @@ jobs:
         curl --request GET \
         --url "https://www.boredapi.com/api/activity" \
         --header "Accept: application/vnd.github+json" \
-        for (auto it = responseJson["url"].begin(); it != responseJson["url"].end(); ++it)
-        {
-               std::cout << it.key() << " | " << it.value() << "\n";
-        }
+        for i in $(echo $api_response | jq -r ".[]")
+        do
+          echo echo $i 
+        done
          
          
         
