@@ -14,17 +14,20 @@ jobs:
       run: |
         
         curl "https://www.boredapi.com/api/activity"
+        var keys=JSON.parse(response.body).keys();
+        var value=keys[0];
+        
          
       
-          if let dictionary   = json.object {
+         # if let dictionary   = json.object {
   
-            for (key, value) in dictionary {
+         #   for (key, value) in dictionary {
 
-              println("key: \(key), value: \(value)")
+           #   println("key: \(key), value: \(value)")
 
-           }
+         #  }
 
-            }
+          #  }
          
         
         
