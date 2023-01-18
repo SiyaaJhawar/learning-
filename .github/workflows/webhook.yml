@@ -12,19 +12,19 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-        curl "https://www.boredapi.com/api/activity"
+        
         
          
       
-        if let dictionary   = json.object {
+          if let dictionary   = curl "https://www.boredapi.com/api/activity" {
   
             for (key, value) in dictionary {
 
               println("key: \(key), value: \(value)")
 
-            }
+           }
 
-             }
+            }
          
         
         
