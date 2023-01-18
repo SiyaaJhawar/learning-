@@ -15,10 +15,10 @@ jobs:
         curl "https://www.boredapi.com/api/activity" | jq
         
          var resData = JSON.parse(response.body);
-          // Map myMap = resData;
-        // myMap.forEach(key, value) {
-        //   print('$key : $value');
-         }; 
+          # Map myMap = resData;
+        # myMap.forEach(key, value) {
+        #   print('$key : $value');
+        # }; 
          
          
         
