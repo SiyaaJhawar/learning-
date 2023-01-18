@@ -13,10 +13,10 @@ jobs:
     - name: REST API with curl
       run: |
         
-        
+        curl "https://www.boredapi.com/api/activity"
          
       
-          if let dictionary   = curl "https://www.boredapi.com/api/activity" {
+          if let dictionary   = json.object {
   
             for (key, value) in dictionary {
 
