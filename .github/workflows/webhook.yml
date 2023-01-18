@@ -16,7 +16,7 @@ jobs:
         
          
       
-          dictionary = json.object {
+        if let dictionary   = json.object {
   
             for (key, value) in dictionary {
 
