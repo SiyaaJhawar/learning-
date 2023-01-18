@@ -13,11 +13,18 @@ jobs:
     - name: REST API with curl
       run: |
         curl "https://www.boredapi.com/api/activity"
-        # jq 'to_entries|map([.key] + .value.a|map(tostring)|join(" "))|.[]'
+        
          
-        #while read -r "https://www.boredapi.com/api/activity"; do
-        # echo "Do whatever with https://www.boredapi.com/api/activity}"
-       # done< <(api-producing-json | jq --raw-output '.{}')
+      
+          dictionary = json.object {
+  
+            for (key, value) in dictionary {
+
+              println("key: \(key), value: \(value)")
+
+            }
+
+             }
          
         
         
