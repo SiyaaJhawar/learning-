@@ -15,10 +15,11 @@ jobs:
       
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"  
-           for (auto it = j["response"].begin(); it != j["response"].end(); ++it)
-           {
-                  std::cout << it.key() << " | " << it.value() << "\n";
-           }
+        
+         
+              for (k, v) in response():
+              print("Key: " + k)
+             print("Value: " + v)
   
             
         # response=curl https://www.boredapi.com/api/activity -header "Accept= application/json")         
