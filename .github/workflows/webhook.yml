@@ -13,7 +13,7 @@ jobs:
     - name: REST API with curl
       run: |
         
-        curl -Ss "https://www.boredapi.com/api/activity" |\
+        curl -Ss "https://www.boredapi.com/api/activity"
         # jq -r '.[] | @https://www.boredapi.com/api/activity' |\
         # while read api
        #  do
