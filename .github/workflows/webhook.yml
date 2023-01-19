@@ -14,8 +14,8 @@ jobs:
       run: |
         # curl -Ss "https://www.boredapi.com/api/activity"
         curl "https://www.boredapi.com/api/activity"
-         var keys=JSON.parse(response.body).keys();
-         var value=keys[0];
+         #var keys=JSON.parse(response.body).keys();
+         #var value=keys[0];
        
      
          # for activity in $( echo "$json" | jq '.activity{}') ; do 
