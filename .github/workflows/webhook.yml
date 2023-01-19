@@ -13,7 +13,8 @@ jobs:
     - name: REST API with curl
       run: |
         # curl -Ss "https://www.boredapi.com/api/activity"
-        curl "https://www.boredapi.com/api/activity"
+        #curl "https://www.boredapi.com/api/activity"
+        echo "::set-output name=releasetag::$(curl -s "https://www.boredapi.com/api/activity")
          #var keys=JSON.parse(response.body).keys();
          #var value=keys[0];
        
