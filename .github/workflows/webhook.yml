@@ -12,8 +12,11 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-         response=$(curl https://www.boredapi.com/api/activity -header "Accept= application/json")         
-          echo "response from curl= $response"  
+       echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
+         curl https://www.boredapi.com/api/activity >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+        # response=curl https://www.boredapi.com/api/activity -header "Accept= application/json")         
+        #  echo "response from curl= $response"  
         # curl -Ss ""
         #curl "https://www.boredapi.com/api/activity"
         #variables.json = curl -s "https://www.boredapi.com/api/activity"
