@@ -15,6 +15,11 @@ jobs:
       
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"
+           - ${{ each var in response }}:
+           - script: |
+            echo ${{ var.key }}
+            echo ${{ var.value }}
+            displayName: ${{ var.key }}
            
          #  for (key, value) in response {
 
