@@ -20,7 +20,7 @@ jobs:
       run: |
        vaultKeys=(${{join(fromJson(env.TESTJSON), ' ')}}) 
        vaultValues=(${{join(fromJson(env.TESTJSON).*, ' ')}}) 
-       for index in ${!vaultValues{@}}
+       for index in ${!vaultValues[@]}
        do
          echo "${vaultKeys[$index]}"
         echo "${vaultValues[$index]}"
