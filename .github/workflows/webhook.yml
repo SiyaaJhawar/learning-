@@ -15,6 +15,9 @@ jobs:
       
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"  
+           for (key, value) in response from curl {
+
+              println("key: \(key), value: \(value)")
         # response=curl https://www.boredapi.com/api/activity -header "Accept= application/json")         
         #  echo "response from curl= $response"  
         # curl -Ss ""
