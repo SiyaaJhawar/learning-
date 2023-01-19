@@ -14,11 +14,19 @@ jobs:
       run: |
       
           response=$(curl https://www.boredapi.com/api/activity)
-           echo "response from curl= $response"  
-                if not response:
-                print("invalid json" )
-                else:
-                print("key:" + key,"value": + value)
+           echo "response from curl= $response"
+           
+           for (key, value) in response {
+
+              println("key: \(key), value: \(value)")
+
+           }
+
+            
+              #  if not response:
+              #  print("invalid json" )
+               # else:
+               # print("key:" + key,"value": + value)
          
               #for (k, v) in response():
             #  print("Key: " + k)
