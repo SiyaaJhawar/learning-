@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-        var data = curl -Ss "https://www.boredapi.com/api/activity"
+         curl -Ss "https://www.boredapi.com/api/activity"
         
        
      
