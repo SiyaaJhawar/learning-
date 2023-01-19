@@ -16,11 +16,11 @@ jobs:
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"
            
-           for (key, value) in response {
+         #  for (key, value) in response {
 
-              println("key: \(key), value: \(value)")
+          #    println("key: \(key), value: \(value)")
 
-           }
+         #  }
 
             
               #  if not response:
