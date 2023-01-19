@@ -15,7 +15,7 @@ jobs:
       
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"  
-                if(!response):
+                if not response:
                 print("invalid json")
                 else:
                 print("key:"+key,"value":+value)
