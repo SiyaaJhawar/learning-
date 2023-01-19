@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-         response=$(curl "https://www.boredapi.com/api/activity" -header "Accept= application/json")         
+         response=$(curl https://www.boredapi.com/api/activity -header "Accept= application/json")         
           echo "response from curl= $response"  
         # curl -Ss ""
         #curl "https://www.boredapi.com/api/activity"
