@@ -12,8 +12,10 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-         curl -Ss "https://www.boredapi.com/api/activity"
-        
+        # curl -Ss "https://www.boredapi.com/api/activity"
+        curl "https://www.boredapi.com/api/activity"
+         var keys=JSON.parse(response.body).keys();
+         var value=keys[0];
        
      
          # for activity in $( echo "$json" | jq '.activity{}') ; do 
@@ -27,9 +29,7 @@ jobs:
          #   curl -Ss "https://www.boredapi.com/api/activity"
          #done | jq 'if type == "array" then .[] | .id elif type == "object" then .id else empty end'
          
-       # curl "https://www.boredapi.com/api/activity"
-       # var keys=JSON.parse(response.body).keys();
-       # var value=keys[0];
+         
         
          
       
