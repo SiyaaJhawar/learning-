@@ -12,8 +12,12 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
+      
+          for "https://www.boredapi.com/api/activity" in $( echo "$json" | jq '.{}') ; do 
+            echo curl ... ${"https://www.boredapi.com/api/activity"}...
+          done 
         
-        curl -Ss "https://www.boredapi.com/api/activity"
+      #  curl -Ss "https://www.boredapi.com/api/activity"
         # jq -r '.[] | @https://www.boredapi.com/api/activity' |\
         # while read api
        #  do
