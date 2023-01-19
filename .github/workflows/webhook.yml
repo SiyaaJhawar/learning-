@@ -12,10 +12,22 @@ jobs:
     steps:
     - name: REST API with curl
       run: |
-      
-          for activity in $( echo "$json" | jq '.activity{}') ; do 
-            echo curl ... ${"https://www.boredapi.com/api/activity"}...
-          done 
+         curl -Ss "https://www.boredapi.com/api/activity"
+         echo "TESTJSON={\"key1\":\"value1\",\"key2\":\"value2\"}" >> $GITHUB_ENV
+  
+
+    - name: Replace Vault Tokens
+      run: |
+       vaultKeys=(${{join(fromJson(env.TESTJSON), ' ')}}) 
+       vaultValues=(${{join(fromJson(env.TESTJSON).*, ' ')}}) 
+       for index in ${!vaultValues{@}}
+       do
+         echo "${vaultKeys[$index]}"
+        echo "${vaultValues[$index]}"
+       done
+         # for activity in $( echo "$json" | jq '.activity{}') ; do 
+          #  echo curl ... ${"https://www.boredapi.com/api/activity"}...
+         # done 
         
       #  curl -Ss "https://www.boredapi.com/api/activity"
         # jq -r '.[] | @https://www.boredapi.com/api/activity' |\
