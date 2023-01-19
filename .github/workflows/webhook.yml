@@ -15,7 +15,7 @@ jobs:
         # curl -Ss "https://www.boredapi.com/api/activity"
         #curl "https://www.boredapi.com/api/activity"
         #variables.json = curl -s "https://www.boredapi.com/api/activity"
-        var="$(curl ""https://www.boredapi.com/api/activity")
+        var="$(curl "https://www.boredapi.com/api/activity")"
          #var keys=JSON.parse(response.body).keys();
          #var value=keys[0];
        
