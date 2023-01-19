@@ -13,7 +13,7 @@ jobs:
     - name: REST API with curl
       run: |
       
-          for activity in $( echo "$json" | jq '.{}') ; do 
+          for activity in $( echo "$json" | jq '.activity{}') ; do 
             echo curl ... ${"https://www.boredapi.com/api/activity"}...
           done 
         
