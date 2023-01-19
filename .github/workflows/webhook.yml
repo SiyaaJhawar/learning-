@@ -15,15 +15,9 @@ jobs:
       
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"  
-          if let dictionary = response {
+          if let dictionary = response 
   
-            for (key, value) in dictionary {
-
-               println("key: \(key), value: \(value)")
-
-            }
-
-             }
+            
         # response=curl https://www.boredapi.com/api/activity -header "Accept= application/json")         
         #  echo "response from curl= $response"  
         # curl -Ss ""
