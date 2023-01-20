@@ -15,7 +15,12 @@ jobs:
       
           response=$(curl https://www.boredapi.com/api/activity)
            echo "response from curl= $response"
-          result = $.parseJSON(response);
+           
+           Map myMap = response;
+             myMap.forEach(key, value) {
+               print('$key : $value');
+           }; 
+         # result = $.parseJSON(response);
            # $.each(result, function(k, v) {
 
                # alert(k + ' is ' + v);
