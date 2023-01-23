@@ -9,12 +9,16 @@ on:
 jobs:
   run-updater:
     runs-on: ubuntu-latest
+    container: node:16
     steps:
+     - run: node --version
+     - run: npm --version
+     - uses: actions/checkout@v3
+     - run: npm install
+     - run: node json.js
     
-    - name: REST API with curl
-    
-      run: |
-           SiyaaJhawar/learning-/json.js
+      #run: |
+         #  SiyaaJhawar/learning-/json.js
          # response=$(curl https://www.boredapi.com/api/activity)
          #  echo "response from curl= $response"
            
