@@ -2,7 +2,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xhr2 = new XMLHttpRequest();
 
-xhr2.open('GET', 'https://www.boredapi.com/api/activity', true);
+xhr2.open('GET', 'https://www.boredapi.com/api/activity/', true);
 xhr2.setRequestHeader('Accept', 'application/json');
 xhr2.send(null);
 
