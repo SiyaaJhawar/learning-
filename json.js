@@ -16,8 +16,8 @@ if (xhr2.readyState === XMLHttpRequest.DONE) {
   console.log(res);
  Object.entries(res).forEach((item) => {
     Object.entries(item).forEach(([key, val]) => {
-        console.log(`key-${key}-val-${JSON.stringify(val)}`)
-})};
+        console.log(`key-${key}-val-${JSON.stringify(val)}`)}
+
   
 
 
