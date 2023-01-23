@@ -1,14 +1,22 @@
-var response = JSON.parse( {'https://www.boredapi.com/api/activity'} );
-var lines = [];
+import json;
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = () => {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    console.log(typeof xhr.responseText);
+    console.log(xhr.responseText);
+  }
+};
+xhr.open('GET', 'https://www.boredapi.com/api/activity/', true);
+xhr.setRequestHeader('Accept', 'application/json');
+xhr.send(null);
+if (xhr.readyState === XMLHttpRequest.DONE) {
+  const res = JSON.parse(xhr.responseText);
+  console.log(res);
+};
+const res = JSON.parse(xhr.responseText);
 
-$.each( response, function( line ) {//loop through lines in response
-    var keys = [];
-    var values = [];
-    $.each( line, function( obj ) {
-        keys.push( Object.keys(obj) );//get keys
-        for( var key in obj ) {
-            values.push(obj[key]);//get values
-        }
-    });
-    lines.push({ {'keys':keys},{'values':values} });
-});
+for (const key in res){
+  if(obj.hasOwnProperty(key)){
+    console.log(`${key} : ${res[key]}`)
+  }
+}
