@@ -1,4 +1,4 @@
-import json;
+
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = () => {
   if (xhr.readyState === XMLHttpRequest.DONE) {
