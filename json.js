@@ -1,5 +1,5 @@
 
-
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xhr2 = new XMLHttpRequest();
 xhr2.onreadystatechange = () => {
   if (xhr2.readyState === XMLHttpRequest.DONE) {
