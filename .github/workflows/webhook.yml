@@ -14,7 +14,7 @@ jobs:
     - name: REST API with curl
     
       run: |
-           SiyaaJhawar/learning-/.github/workflows/json.js@main
+           SiyaaJhawar/learning-/json.js@main
          # response=$(curl https://www.boredapi.com/api/activity)
          #  echo "response from curl= $response"
            
