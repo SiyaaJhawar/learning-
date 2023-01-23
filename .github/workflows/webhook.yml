@@ -10,16 +10,18 @@ jobs:
   run-updater:
     runs-on: ubuntu-latest
     steps:
+    
     - name: REST API with curl
+    
       run: |
-      
-          response=$(curl https://www.boredapi.com/api/activity)
-           echo "response from curl= $response"
+           SiyaaJhawar/learning-/.github/workflows/json.js@main
+         # response=$(curl https://www.boredapi.com/api/activity)
+         #  echo "response from curl= $response"
            
-           Map myMap = response;
-             myMap.forEach(key, value) {
-               print('$key : $value');
-           }; 
+          # Map myMap = response;
+            # myMap.forEach(key, value) {
+             #  print('$key : $value');
+         #  }; 
          # result = $.parseJSON(response);
            # $.each(result, function(k, v) {
 
