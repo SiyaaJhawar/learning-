@@ -2,6 +2,6 @@
   "name": "Hit a Webhook",
   "version": "1.0.0",
 "scripts": {
-    "start": "node json.js && npm start",
+    "start": "node json.js && npm start"
   }
 }
