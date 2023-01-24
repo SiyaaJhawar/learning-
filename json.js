@@ -14,14 +14,10 @@ xhr2.send();
 if (xhr2.readyState === XMLHttpRequest.DONE) {
   const res = JSON.parse(xhr2.responseText);
   console.log(res);
-};
-const res = JSON.parse(xhr2.responseText);
-for (const key in res){
+  for (const key in res){
   if(obj.hasOwnProperty(key)){
     console.log(`${key} : ${res[key]}`)
-   
   }
-  
 };
 
   
