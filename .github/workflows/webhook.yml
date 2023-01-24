@@ -17,7 +17,7 @@ jobs:
      - run: npm install
      - run:  npm install xmlhttprequest
      - run : npm install xhr2
-     - run: node json.js
+     - run: node scripts
     
       #run: |
          #  SiyaaJhawar/learning-/json.js
