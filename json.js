@@ -16,9 +16,12 @@ if (xhr2.readyState === XMLHttpRequest.DONE) {
   console.log(res);
 };
 const res = JSON.parse(xhr2.responseText);
-Object.entries(res).forEach((entry) => {
-  const [key, value] = entry;
-  console.log(`${key}: ${value}`);
+for (const key,value in res){
+  if(obj.hasOwnProperty(key,value)){
+    console.log(`${key} : ${res[key]}`)
+    console.log(`${value} : ${res[value]}`)
+  }
+  
 });
 
   
