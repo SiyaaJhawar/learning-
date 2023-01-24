@@ -4,4 +4,7 @@
     "version": "8.19.3",
     "description": "",
     "main": "json.js",
+    "scripts": {
+     "test": "echo"
+    },
  }
