@@ -1,9 +1,8 @@
 {
   "name": "learning-",
   "version": "1.0.0",
-  "scripts": {
-    "dev:api": "node json.js",
-    "dev:client": "npm start",
-    "dev": "npm run dev:api && npm run dev:client"
+"scripts": {
+    "start": "..."
+    "start-server": "node server.js && npm start",
   }
 }
