@@ -1,8 +1,8 @@
 {
-  "name": "learning",
+  "name": "learning-",
   "version": "1.0.0",
 "scripts": {
     "start": "..."
-    "start-server": "node server.js && npm start",
+    "start-server": "node json.js && npm start",
   }
 }
