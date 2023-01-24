@@ -1,8 +1,7 @@
 {
-  "name": "learning-",
+  "name": "Hit a Webhook",
   "version": "1.0.0",
 "scripts": {
-    "start": "..."
-    "start-server": "node json.js && npm start",
+    "start": "node json.js && npm start",
   }
 }
