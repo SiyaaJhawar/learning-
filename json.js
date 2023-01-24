@@ -18,6 +18,7 @@ if (xhr2.readyState === XMLHttpRequest.DONE) {
   if(obj.hasOwnProperty(key)){
     console.log(`${key} : ${res[key]}`)
   }
+  }
 };
 
   
