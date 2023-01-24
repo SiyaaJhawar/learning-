@@ -7,7 +7,7 @@ xhr2.onreadystatechange = () => {
     console.log(xhr2.responseText);
   }
 };
-xhr2.open('GET', 'https://www.boredapi.com/api/activity', true);
+xhr2.open('GET', 'https://icanhazdadjoke.com/', true);
 xhr2.setRequestHeader('Accept', 'application/json');
 xhr2.send(null);
 if (xhr2.readyState === XMLHttpRequest.DONE) {
@@ -17,11 +17,10 @@ if (xhr2.readyState === XMLHttpRequest.DONE) {
 
 const res = JSON.parse(xhr2.responseText);
 
-for (const key in res){
-  if(obj.hasOwnProperty(key)){
-    console.log(`${key} : ${res[key]}`)
-  }
-}
+Object.entries(res).forEach((entry) => {
+  const [key, value] = entry;
+  console.log(`${key}: ${value}`);
+});
 
 
 
