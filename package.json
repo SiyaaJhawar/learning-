@@ -1,9 +1,4 @@
 {
-    "activity": "Learn GraphQL",
-    "type": "education",
-    "participants": 1,
-    "price": 0,
-    "link": "https://graphql.org/",
-    "key": "2167064",
-    "accessibility": 0.8
+  "type": "module",
+
 }
