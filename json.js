@@ -22,7 +22,7 @@ for (const key in res){
    
   }
   
-});
+};
 
   
 
