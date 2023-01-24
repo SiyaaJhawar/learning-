@@ -7,8 +7,8 @@ xhr2.onreadystatechange = () => {
     console.log(xhr2.responseText);
   }
 };
-xhr2.open('GET', 'https://www.boredapi.com/api/activity', true);
-xhr2.setRequestHeader('content-type', 'application/json');
+xhr2.open('GET', 'https://icanhazdadjoke.com/', true);
+xhr2.setRequestHeader('Accept', 'application/json');
 xhr2.send();
 if (xhr2.readyState === XMLHttpRequest.DONE) {
   const res = JSON.parse(xhr2.responseText);
