@@ -19,7 +19,7 @@ const res = JSON.parse(xhr2.responseText);
 Object.entries(res).forEach((entry) => {
   const [key, value] = entry;
   console.log(`${key}: ${value}`);
-});
+})
 
 
 
