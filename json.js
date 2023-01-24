@@ -10,6 +10,10 @@ xhr2.onreadystatechange = () => {
 xhr2.open('GET', 'https://www.boredapi.com/api/activity/', true);
 xhr2.setRequestHeader('Accept', 'application/json');
 xhr2.send(null);
+if (xhr.readyState === XMLHttpRequest.DONE) {
+  const res = JSON.parse(xhr.responseText);
+  console.log(res);
+};
 
 const res = JSON.parse(xhr2.responseText);
 Object.entries(res).forEach((entry) => {
