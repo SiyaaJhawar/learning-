@@ -11,6 +11,12 @@ xhr2.open('GET', 'https://www.boredapi.com/api/activity/', true);
 xhr2.setRequestHeader('Accept', 'application/json');
 xhr2.send(null);
 
+const res = JSON.parse(xhr.responseText);
+Object.entries(res).forEach((entry) => {
+  const [key, value] = entry;
+  console.log(`${key}: ${value}`);
+});
+
 
 
 
