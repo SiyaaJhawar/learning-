@@ -13,14 +13,15 @@ xhr2.send(null);
 if (xhr2.readyState === XMLHttpRequest.DONE) {
   const res = JSON.parse(xhr2.responseText);
   console.log(res);
-};
-
-const res = JSON.parse(xhr2.responseText);
-
-Object.entries(res).forEach((entry) => {
+  Object.entries(res).forEach((entry) => {
   const [key, value] = entry;
   console.log(`${key}: ${value}`);
 });
+
+
+
+
+
 
 
 
