@@ -13,12 +13,12 @@ xhr2.send(null);
 if (xhr2.readyState === XMLHttpRequest.DONE) {
   const res = JSON.parse(xhr2.responseText);
   console.log(res);
-}
-const res = JSON.parse(xhr2.responseText);
-for (const key in res){
+  for (const key in res){
  
-    console.log({key}+ ':', res[key]);
+    console.log(key + ':', res[key]);
   }
+}
+
 
   
                               
