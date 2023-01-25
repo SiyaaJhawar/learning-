@@ -8,8 +8,8 @@ xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var result = this.responseText;
         console.log(result);
-     for (var i = 0; i < response.length; i++) {
-    console.log(response[i]);
+     for (var i = 0; i < result.length; i++) {
+    console.log(result[i]);
 }
     }
 };
