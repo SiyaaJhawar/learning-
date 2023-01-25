@@ -2,7 +2,7 @@
 var getJSON = function(url, callback) {
 
     var xmlhttprequest = new XMLHttpRequest();
-    xmlhttprequest.open('GET', 'https://www.boredapi.com/api/activity', true);
+    xmlhttprequest.open('GET', 'https://jsonplaceholder.typicode.com/todos/1', true);
     xmlhttprequest.responseType = 'json';
 
     xmlhttprequest.onload = function() {
