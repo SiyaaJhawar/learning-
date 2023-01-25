@@ -3,6 +3,7 @@ xhr.open("GET", "https://www.boredapi.com/api/activity", true);
 xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
         console.log(xhr.responseText);
+         var response = JSON.parse(xhr.responseText);
     }
 };
 xhr.send();
