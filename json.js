@@ -17,15 +17,21 @@ var getJSON = function(url, callback) {
     };
 
     xmlhttprequest.send();
-    const res = JSON.parse(xmlhttprequest.response);
-    console.log(res);
-for (const key in res){
-  if(obj.hasOwnProperty(key)){
-    console.log(`${key} : ${res[key]}`)
-  }
-}
-    
-};
+
+  };
+ getJSON('https://jsonplaceholder.typicode.com/todos/1',  function(err, data) {
+
+    if (err != null) {
+        console.error(err);
+    } else {
+
+       var display = `User_ID: ${data.userId}
+ID: ${data.id}
+Title: ${data.title} 
+Completion_Status: ${data.completed}`;
+    }
+  console.log(display);
+});
 
 
 
