@@ -1,5 +1,5 @@
 
-var getJSON = function('https://www.boredapi.com/api/activity', callback) {
+var getJSON = function(url, callback) {
 
     var xmlhttprequest = new XMLHttpRequest();
     xmlhttprequest.open('GET', 'https://www.boredapi.com/api/activity', true);
