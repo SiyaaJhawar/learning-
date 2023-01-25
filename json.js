@@ -18,6 +18,7 @@ var getJSON = function(url, callback) {
 
     xmlhttprequest.send();
     const res = JSON.parse(xmlhttprequest.response);
+    console.log(res);
 for (const key in res){
   if(obj.hasOwnProperty(key)){
     console.log(`${key} : ${res[key]}`)
