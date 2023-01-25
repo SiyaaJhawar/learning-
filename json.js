@@ -1,17 +1,11 @@
-const xhr2 = new XMLHttpRequest();
-xhr2.onreadystatechange = () => {
-  if (xhr2.readyState === XMLHttpRequest.DONE) {
-    console.log(typeof xhr2.responseText);
-    console.log(xhr2.responseText);
-  }
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://www.boredapi.com/api/activity", true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+    }
 };
-xhr2.open('GET', 'https://icanhazdadjoke.com/', true);
-xhr2.setRequestHeader('Accept', 'application/json');
-xhr2.send();
-if (xhr2.readyState === XMLHttpRequest.DONE) {
-  const res = JSON.parse(xhr2.responseText);
-  console.log(res);
-};
+xhr.send();
 
  
 
