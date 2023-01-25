@@ -13,8 +13,8 @@ xhr.onreadystatechange = function () {
     console.log(key + ": " + result[key]);
 });
 }
-    }
-};
+    };
+
  
 xhr.send();
 
