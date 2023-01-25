@@ -8,8 +8,10 @@ xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var result = this.responseText;
         console.log(result);
-     for (var i = 0; i < result.length; i++) {
-    console.log(result[i]);
+   var result = JSON.parse(this.responseText);
+     Object.keys(result).forEach(function(key) {
+    console.log(key + ": " + result[key]);
+});
 }
     }
 };
