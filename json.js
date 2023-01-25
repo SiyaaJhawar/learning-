@@ -19,6 +19,7 @@ var getJSON = function(url, callback) {
     xmlhttprequest.send();
 
   };
+console.log(`The request URL was: ${xmlhttprequest.response}`)
  getJSON('https://jsonplaceholder.typicode.com/todos/1',  function(err, data) {
 
     if (err != null) {
