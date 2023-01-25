@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1",true);
+xhr.open("GET", "https://www.boredapi.com/api/activity",true);
  
 xhr.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
