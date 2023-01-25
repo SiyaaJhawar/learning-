@@ -1,12 +1,17 @@
-const xhr2= new XMLHttpRequest();
-xhr2.open("GET", "https://www.boredapi.com/api/activity", true);
-xhr2.onreadystatechange = function() {
-    if (xhr2.readyState === 4 && xhr2.status === 200) {
-        console.log(xhr2.responseText);
-         var response = JSON.parse(xhr2.responseText);
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+ 
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://www.boredapi.com/api/activity",true);
+ 
+xhr.onreadystatechange = function () {
+    console.log("readyState = " + this.readyState + ", status = " + this.status);
+    if (this.readyState == 4 && this.status == 200) {
+        var result = this.responseText;
+        console.log(result);
     }
 };
-xhr2.send();
+ 
+xhr.send();
 
  
 
