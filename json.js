@@ -1,8 +1,8 @@
 
-var getJSON = function(https://www.boredapi.com/api/activity, callback) {
+var getJSON = function('https://www.boredapi.com/api/activity', callback) {
 
     var xmlhttprequest = new XMLHttpRequest();
-    xmlhttprequest.open('GET', https://www.boredapi.com/api/activity, true);
+    xmlhttprequest.open('GET', 'https://www.boredapi.com/api/activity', true);
     xmlhttprequest.responseType = 'json';
 
     xmlhttprequest.onload = function() {
