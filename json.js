@@ -1,12 +1,12 @@
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://www.boredapi.com/api/activity", true);
-xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log(xhr.responseText);
-         var response = JSON.parse(xhr.responseText);
+var xhr2= new XMLHttpRequest();
+xhr2.open("GET", "https://www.boredapi.com/api/activity", true);
+xhr2.onreadystatechange = function() {
+    if (xhr2.readyState === 4 && xhr2.status === 200) {
+        console.log(xhr2.responseText);
+         var response = JSON.parse(xhr2.responseText);
     }
 };
-xhr.send();
+xhr2.send();
 
  
 
