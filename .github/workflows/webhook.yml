@@ -17,6 +17,7 @@ jobs:
      - uses: actions/checkout@v3
      - run: npm install
      - run:  npm install xmlhttprequest
+     - run:  npm install xhr2
      
      - run: node json.js
     
