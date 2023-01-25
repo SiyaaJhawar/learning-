@@ -13,13 +13,14 @@ var getJSON = function(url, callback) {
             callback(null, xmlhttprequest.response);
         } else {
             callback(status, xmlhttprequest.response);
+            console.log(`The request URL was: ${xmlhttprequest.response}`)
         }
     };
 
     xmlhttprequest.send();
 
   };
-console.log(`The request URL was: ${xmlhttprequest.response}`)
+
  
 
 
