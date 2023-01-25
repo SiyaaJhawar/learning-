@@ -20,7 +20,19 @@ var getJSON = function(url, callback) {
     xmlhttprequest.send();
 
   };
+getJSON('https://jsonplaceholder.typicode.com/todos/1',  function(err, data) {
 
+    if (err != null) {
+        console.error(err);
+    } else {
+
+       var display = `User_ID: ${data.userId}
+ID: ${data.id}
+Title: ${data.title} 
+Completion_Status: ${data.completed}`;
+    }
+  console.log(display);
+});
  
 
 
