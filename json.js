@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://www.boredapi.com/api/activity",true);
+xhr.open("GET", "https://icanhazdadjoke.com",true);
  
 xhr.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
