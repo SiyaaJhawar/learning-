@@ -26,14 +26,8 @@ xhr.onreadystatechange = function () {
             console.log(key + ": " + val);
         }
     }
-}
-
-
-
-
-
-
 };
+
  xhr.send();
 
 
