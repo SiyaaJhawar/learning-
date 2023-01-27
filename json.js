@@ -9,11 +9,14 @@ xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var result = JSON.parse(this.responseText);
         console.log(result);
-       if(Array.isArray(result)){
-       Object.entries(res).forEach((entry) => {
-  const [key, value] = entry;
-  console.log(`${key}: ${value}`);
-});
+      if(result.hasOwnProperty(obj) && Array.isArray(result.obj)){
+            result.obj.forEach(function(item) {
+                for(var key in item){
+                    console.log(key + ': '+ item[key]);
+                }
+            });
+        }
+    
         
     
     }else{
