@@ -29,7 +29,7 @@ xhr.onreadystatechange = function () {
 }
 };
 
-xhr.open("GET", "https://www.boredapi.com/api/activity",true);
+xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
 xhr.send();
 
 
