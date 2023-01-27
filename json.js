@@ -13,10 +13,7 @@ xhr.onreadystatechange = function () {
       Object.entries(result).forEach((entry) => {
   const [key, value] = entry;
   console.log(`${key}: ${value}`);
-        for(var key in item){
-    
-        console.log(key + ': '+ item[key]);\
-        }
+        
 });
     
         
