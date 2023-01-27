@@ -13,9 +13,9 @@ xhr.onreadystatechange = function () {
        result.forEach(obj => {
         Object.entries(obj).forEach(([key, value]) => {
             console.log(`${key} ${value}`);
-        }
+        
         });
-       
+       }
         
     }else{
             for(var key in result){
