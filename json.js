@@ -1,8 +1,8 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
-xhr.send();
+//xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
+//xhr.send();
  
 xhr.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
@@ -29,7 +29,8 @@ xhr.onreadystatechange = function () {
 }
 };
 
-
+xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
+xhr.send();
 
 
 
