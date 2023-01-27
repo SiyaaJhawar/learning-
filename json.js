@@ -14,7 +14,7 @@ xhr.onreadystatechange = function () {
         Object.entries(obj).forEach(([key, value]) => {
             console.log(`${key} ${value}`);
         });
-       }
+       });
         
     
     }else{
