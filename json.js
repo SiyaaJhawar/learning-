@@ -9,12 +9,13 @@ xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var result = JSON.parse(this.responseText);
         console.log(result);
-        if(response.hasOwnProperty('places') && Array.isArray(response.places)){
-            response.places.forEach(function(item) {
-                for(var key in item){
+        if(Array.isArray(result)){
+       result.forEach(function(item) {
+    console.log(item);
+         for(var key in item){
                     console.log(key + ': '+ item[key]);
-                }
-            });
+});
+       }
         
     }else{
             for(var key in result){
