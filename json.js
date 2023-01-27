@@ -16,7 +16,7 @@ xhr.onreadystatechange = function () {
                 }
             });
         }
-    }
+    
     
     else{
             for(var key in result){
