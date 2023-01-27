@@ -2,6 +2,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://www.boredapi.com/api/activity",true);
+xhr.send();
  
 xhr.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
@@ -20,7 +21,7 @@ xhr.onreadystatechange = function () {
     }
 };
  
-xhr.send();
+
 
 
 
