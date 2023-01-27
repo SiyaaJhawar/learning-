@@ -13,7 +13,7 @@ xhr.onreadystatechange = function () {
         result.forEach(function(item) {
     console.log(item);
 });
-            }
+            
         }else{
             for(var key in result){
                 console.log(key + ': '+ result[key]);
