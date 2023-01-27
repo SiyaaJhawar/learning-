@@ -10,34 +10,29 @@ xhr.onreadystatechange = function () {
         var result = JSON.parse(this.responseText);
         console.log(result);
     
-      
-   for (var key in result) {
-    if (result.hasOwnProperty(key)) {
-        var val = result[key];
-        if (Array.isArray(val)) {
-            val.forEach(function(item) {
-                for (var k in item) {
-                    if (item.hasOwnProperty(k)) {
-                        console.log(k + ": " + item[k]);
+    for (var key in result) {
+        if (result.hasOwnProperty(key)) {
+            var val = result[key];
+            if (Array.isArray(val)) {
+                val.forEach(function(item) {
+                    for (var k in item) {
+                        if (item.hasOwnProperty(k)) {
+                            console.log(k + ": " + item[k]);
+                        }
                     }
-                }
-            });
-        } else {
-            console.log(key + ": " + val);
+                });
+            } else {
+                console.log(key + ": " + val);
+            }
         }
     }
 }
-
- xhr.send();
-
-
+};
+xhr.send();
 
 
 
 
-
-
- 
 
 
   
