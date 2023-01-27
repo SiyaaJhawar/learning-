@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.zippopotam.us/us/33162",true);
+xhr.open("GET", "http://localhost:3000/users/",true);
 xhr.send();
  
 xhr.onreadystatechange = function () {
