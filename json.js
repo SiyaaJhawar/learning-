@@ -15,7 +15,7 @@ xhr.onreadystatechange = function () {
                     console.log(key + ': '+ item[key]);
                 }
             });
-        }
+        
     
         
     
