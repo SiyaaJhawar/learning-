@@ -10,9 +10,10 @@ xhr.onreadystatechange = function () {
         var result = JSON.parse(this.responseText);
         console.log(result);
         if(Array.isArray(result)){
-        result.forEach(function(item) {
-    console.log(item);
-});
+      for (var i = 0; i < result.length; i++) {
+    console.log(result[i]);
+
+}
             
         }else{
             for(var key in result){
