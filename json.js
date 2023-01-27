@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
+xhr.open("GET", "https://api.zippopotam.us/us/33162",true);
 
  
 xhr.onreadystatechange = function () {
