@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://www.boredapi.com/api/activity",true);
+xhr.open("GET", "http://localhost:3000/users/",true);
 xhr.send();
  
 xhr.onreadystatechange = function () {
