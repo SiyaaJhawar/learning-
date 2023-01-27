@@ -9,21 +9,30 @@ xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var result = JSON.parse(this.responseText);
         console.log(result);
-     if(Array.isArray(result.places)){
-    result.places.forEach(function(item) {
-        for (var key in item) {
-            if (item.hasOwnProperty(key)) {
-                console.log(key + ": " + item[key]);
-            }
-        }
-    });
-}
-    else{
-            for(var key in result){
-                console.log(key + ': '+ result[key]);
-            }
+    
+      
+   for (var key in result) {
+    if (result.hasOwnProperty(key)) {
+        var val = result[key];
+        if (Array.isArray(val)) {
+            val.forEach(function(item) {
+                for (var k in item) {
+                    if (item.hasOwnProperty(k)) {
+                        console.log(k + ": " + item[k]);
+                    }
+                }
+            });
+        } else {
+            console.log(key + ": " + val);
         }
     }
+}
+
+
+
+
+
+
 };
  xhr.send();
 
