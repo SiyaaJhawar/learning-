@@ -18,7 +18,7 @@ xhr.onreadystatechange = function () {
         }
     }
     
-    }else{
+    else{
             for(var key in result){
                 console.log(key + ': '+ result[key]);
             }
