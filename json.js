@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://universities.hipolabs.com/search?country=United+States",true);
+xhr.open("GET", "https://api.zippopotam.us/us/33162",true);
 xhr.send();
 //xhr.open("GET", "https://www.boredapi.com/api/activity",true);
 //xhr.send();
