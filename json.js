@@ -1,6 +1,8 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
+xhr.send();
 //xhr.open("GET", "https://www.boredapi.com/api/activity",true);
 //xhr.send();
  
@@ -29,8 +31,7 @@ xhr.onreadystatechange = function () {
 }
 };
 
-xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
-xhr.send();
+
 
 
 
