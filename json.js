@@ -15,16 +15,15 @@ xhr.onreadystatechange = function () {
     for (var key in result) {
         if (result.hasOwnProperty(key)) {
             var val = result[key];
-         //  if (Array.isArray(val)) {
-             //   val.forEach(function(item) {
-                   // for (var k in item) {
-                    //    if (item.hasOwnProperty(k)) {
-                       //     console.log(k + ": " + item[k]);
-                      //  }
-                  //  }
-              //  });
-          //  } 
-         else {
+           if (Array.isArray(val)) {
+                val.forEach(function(item) {
+                    for (var k in item) {
+                       if (item.hasOwnProperty(k)) {
+                           console.log(k + ": " + item[k]);
+                        }
+                   }
+               });
+           } else {
                 console.log(key + ": " + val);
             }
         }
