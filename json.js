@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.coinbase.com/v2/currencies",true);
+xhr.open("GET", "https://randomuser.me/api/",true);
 xhr.send();
 //xhr.open("GET", "https://www.boredapi.com/api/activity",true);
 //xhr.send();
