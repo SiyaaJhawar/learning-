@@ -15,4 +15,4 @@ jobs:
       run: |
        echo application_id:${{secrets.APPLICATION_ID}}
        echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
-       curl -i -H "Authorization: Bearer YOUR_JWT" -H "Accept: application/vnd.github+json" https://api.github.com/app
+       curl -i -H "Authorization: Bearer YOUR_JWT" -H "Accept: application/vnd.github+json" 
