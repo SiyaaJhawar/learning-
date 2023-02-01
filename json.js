@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1",true);
+xhr.open("GET", "https://rapidapi.com/",true);
 xhr.send();
 //xhr.open("GET", "https://www.boredapi.com/api/activity",true);
 //xhr.send();
