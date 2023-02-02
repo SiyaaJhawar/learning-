@@ -15,4 +15,5 @@ jobs:
       run: |
        echo application_id:${{secrets.APPLICATION_ID}}
        echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
+       export GITHUB_TOKEN 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
        curl -i -H "Authorization: Bearer YOUR_JWT" -H "Accept: application/vnd.github+json" https://github.com/SiyaaJhawar/learning-
