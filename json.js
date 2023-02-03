@@ -32,6 +32,29 @@ xhr.onreadystatechange = function () {
   }
 };
 
+var response = {
+  data: [
+    {
+      name: "John",
+      age: 30
+    },
+    {
+      name: "Jane",
+      age: 28
+    }
+  ]
+};
+
+var arr = response.data;
+
+arr.forEach(function(item) {
+  if (item.hasOwnProperty("gender")) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+});
+
 
 
 
