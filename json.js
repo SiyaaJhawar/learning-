@@ -24,7 +24,7 @@ xhr.onreadystatechange = function () {
               }
             }
           });
-        } else {
+        else {
           console.log(key + ": " + val);
         }
       }
