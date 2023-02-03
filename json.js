@@ -47,8 +47,8 @@ var response = {
 
 var arr = response.data;
 
-arr.forEach(function(item) {
-  if (item.hasOwnProperty("gender")) {
+arr.forEach(function(obj) {
+  if (obj.hasOwnProperty("gender")) {
     console.log(true);
   } else {
     console.log(false);
