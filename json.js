@@ -18,7 +18,7 @@ xhr.onreadystatechange = function () {
           val.forEach(function(item) {
             for (var k in item) {
               if (item.hasOwnProperty(k)) {
-                console.log(item.hasOwnProperty(k));
+            
                 console.log(k + ": " + item[k]);
               } 
               }
