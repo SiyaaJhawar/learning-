@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.publicapis.org/entries",false);
+xhr.open("GET", "https://api.publicapis.org/entries",true);
 xhr.send();
 //xhr.open("GET", "https://www.boredapi.com/api/activity",false);
 //xhr.send();
