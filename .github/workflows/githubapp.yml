@@ -16,9 +16,9 @@ jobs:
        echo application_id:${{secrets.APPLICATION_ID}}
        echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
        export GITHUB_TOKEN Ss1A5jzMPcCZrs52YzzdoRj2b3+JptHbzOWqjPCavN4=
-       $ curl -i -X GET \
+       $ curl -i -X GET https://www.boredapi.com/api/activity/
      
-       -H "Accept: application/vnd.github+json" \
-       https://www.boredapi.com/api/activity/
+       
+    
 
       
