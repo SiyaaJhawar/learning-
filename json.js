@@ -20,7 +20,7 @@ xhr.onreadystatechange = function () {
               if (item.hasOwnProperty(k)) {
                 console.log(item.hasOwnProperty(k));
                 console.log(k + ": " + item[k]);
-              } else if (k === "somePropertyThatDoesNotExist") {
+              } else if (k == "somePropertyThatDoesNotExist") {
                 console.log(item.hasOwnProperty("somePropertyThatDoesNotExist"));
                 console.log(false);
               }
