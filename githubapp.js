@@ -1,24 +1,33 @@
-const axios = require('axios');
+const axios = require("axios");
 
-async function createGitHubIssue(SiyaaJhawar, learning-, hello world, i am a human) {
-  try {
-    const response = await axios.post(
-      `https://api.github.com/repos/${SiyaaJhawar}/${learning-}/issues`,
-      {
-        title: hello world ,
-        body:  i am a human
-      },
-      {
-        headers: {
-          Accept: 'application/vnd.github+json',
-          Authorization: `Token ${{secrets.APPLICATION_PRIVATE_KEY}}`
-        }
-      }
-    );
+const auth = {
+  username: "SiyaaJhawar",
+  password: "SHA256:tbc37FFw/bK2ezuR/DG0aP1AtyCACO5SlCHi9ndHu1Y="
+};
+
+const issue = {
+  title: "Hi",
+  body: "This is the body of the test issue"
+};
+
+axios
+  .post("https://api.github.com/repos/SiyaaJhawar/learning-/issues", issue, { auth })
+  .then(response => {
     console.log(response.data);
-  } catch (error) {
+  })
+  .catch(error => {
     console.error(error);
-  }
-}
+  });
 
-createGitHubIssue('SiyaaJhawar', 'learning-', 'hello world', 'i am a human');
+
+
+    
+
+
+
+
+
+
+
+
+
