@@ -27,8 +27,7 @@ jobs:
 
     - name: Create GitHub Issue
       run: node create-issue.js
-      env:
-        GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+     
     
      
        
