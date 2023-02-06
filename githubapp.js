@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-async function createGitHubIssue(SiyaaJhawar, learning, Hi, This is a sample) {
+async function createGitHubIssue(SiyaaJhawar, learning, Hi, issueBody) {
   try {
     const response = await axios.post(
       `https://api.github.com/repos/SiyaaJhawar/learning-/issues`,
@@ -21,7 +21,7 @@ async function createGitHubIssue(SiyaaJhawar, learning, Hi, This is a sample) {
   }
 }
 
-createGitHubIssue('SiyaaJhawar', 'learning', 'Hi', 'This is a sample');
+createGitHubIssue('SiyaaJhawar', 'learning', 'Hi', 'Issue body');
 
 
 
