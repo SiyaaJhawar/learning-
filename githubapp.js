@@ -11,7 +11,7 @@ async function createGitHubIssue(SiyaaJhawar, learning-, hello world, i am a hum
       {
         headers: {
           Accept: 'application/vnd.github+json',
-          Authorization: `Token ${process.env.GITHUB_ACCESS_TOKEN}`
+          Authorization: `Token ${{secrets.APPLICATION_PRIVATE_KEY}}`
         }
       }
     );
