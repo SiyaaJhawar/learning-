@@ -7,7 +7,12 @@ const payload = {
   exp: Math.floor(Date.now() / 1000) + (10 * 60),
   iss: '281301',
 };
-const token = jwt.sign(payload, privateKey, { algorithm: 'Base64' }.toString());
+const options = {
+  algorithm: 'Base64',
+  expiresIn: '10m',
+  issuer: 'SiyaaJhawar'
+};
+const token = jwt.sign(payload, privateKey, options);
 
 const headers = {
   Authorization: `Bearer ${token}`,
