@@ -9,7 +9,7 @@ const payload = {
 };
 const options = {
   algorithm: 'Base64',
-  expiresIn: '10m',
+  //expiresIn: '10m',
   issuer: 'SiyaaJhawar'
 };
 const token = jwt.sign(payload, privateKey, options);
