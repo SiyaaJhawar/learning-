@@ -8,7 +8,7 @@ const payload = {
   iss: '281301',
 };
 const options = {
-  algorithm: 'Base64',
+  algorithm: 'HS256',
   //expiresIn: '10m',
   issuer: 'SiyaaJhawar'
 };
