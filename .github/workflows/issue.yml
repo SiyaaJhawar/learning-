@@ -19,4 +19,4 @@ jobs:
         -H "Authorization: Bearer $GITHUB_TOKEN" \
         -H "Accept: application/vnd.github+json" \
         -d "{\"Hello World",\"body\":\"This is a test issue created from GitHub Actions\"}" \
-        https://api.github.com/reos/${{ SiyaaJhawar/learning- }}/issues
+        https://api.github.com/reos/${{ github.SiyaaJhawar/learning-}}/issues
