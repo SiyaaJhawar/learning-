@@ -8,6 +8,7 @@ on:
  
 jobs:
   run-updater:
+    name: Build with Node
     runs-on: ubuntu-latest
     steps:
     - name: github app
