@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: github app
-      
-      run: |
+    - uses: actions/checkout@v3
+    - run: node githubapp.js
+    - run: |
        echo application_id:${{secrets.APPLICATION_ID}}
        echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
        echo GITHUB_TOKEN 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
