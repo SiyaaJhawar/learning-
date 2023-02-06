@@ -10,7 +10,7 @@ const payload = {
 const options = {
   algorithm: 'HS256',
   //expiresIn: '10m',
-  issuer: 'SiyaaJhawar'
+  //issuer: 'SiyaaJhawar'
 };
 const token = jwt.sign(payload, privateKey, options);
 
