@@ -6,7 +6,7 @@ async function createGitHubIssue(SiyaaJhawar, learning, Hi, issueBody) {
       `https://api.github.com/repos/SiyaaJhawar/learning-/issues`,
       {
         title: Hi,
-        body: This is a sample
+        body: issueBody
       },
       {
         headers: {
