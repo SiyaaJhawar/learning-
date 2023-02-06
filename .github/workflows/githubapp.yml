@@ -15,7 +15,7 @@ jobs:
       run: |
        echo application_id:${{secrets.APPLICATION_ID}}
        echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
-       export GITHUB_TOKEN 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
+       export GITHUB_TOKEN SHA256:tbc37FFw/bK2ezuR/DG0aP1AtyCACO5SlCHi9ndHu1Y=
        $ curl -i -X GET https://www.boredapi.com/api/activity/
      
        
