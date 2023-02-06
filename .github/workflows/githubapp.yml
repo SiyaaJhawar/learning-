@@ -16,7 +16,7 @@ jobs:
        echo application_id:${{secrets.APPLICATION_ID}}
        echo application_privatekey:${{secrets.APPLICATION_PRIVATE_KEY}}
        echo GITHUB_TOKEN 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
-       curl https://www.boredapi.com/api/activity/
+       curl https://api.github.com/users/SiyaaJhawar
 
        
       
