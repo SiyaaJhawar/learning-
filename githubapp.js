@@ -1,4 +1,8 @@
 const axios = require('axios');
+const auth = {
+  username: "SiyaaJhawar",
+  password: "SHA256:tzGK/2qqqpwA+RL5vNtRlt+i1WMU/aEWxGJjdWBK/Ow="
+};
 
 async function createGitHubIssue(SiyaaJhawar, learning,Hi, issueBody) {
   try {
