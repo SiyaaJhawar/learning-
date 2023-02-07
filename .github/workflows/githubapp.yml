@@ -33,6 +33,9 @@ jobs:
     - run: node githubapp.js
       env:
         GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+    - run : openssl rsa -in PATH_TO_PEM_FILE -pubout -outform DER | openssl sha256 -binary | openssl base64
+ 
+ 
     
      
        
