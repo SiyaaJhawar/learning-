@@ -1,0 +1,23 @@
+name: Generate Private Key
+
+on: [push]
+
+jobs:
+  generate_private_key:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Generate private key
+      run: |
+        openssl genpkey -algorithm RSA -out private_key.pem -aes256
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Store private key as a GitHub Actions secret
+      uses: actions/add-matrix-artifact@v1
+      with:
+        name: private_key
+        path: private_key.pem
