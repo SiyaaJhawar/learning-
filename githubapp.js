@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const privateKey = process.env.PRIVATE_KEY;
 const appId = process.env.APP_ID;
