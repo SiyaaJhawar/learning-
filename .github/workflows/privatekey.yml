@@ -23,7 +23,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Store private key as a GitHub Actions secret
-      uses: actions/add-matrix-artifact@v1
+      uses: actions/create-or-update-secret@v1
       with:
         name: private_key
         path: private_key.pem
