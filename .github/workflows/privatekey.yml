@@ -1,7 +1,12 @@
 name: Generate Private Key
 
-on: [push]
-workflow_dispatch:
+ 
+  
+on:
+  push:
+    branches:
+      - main
+        workflow_dispatch:
 
 jobs:
   generate_private_key:
