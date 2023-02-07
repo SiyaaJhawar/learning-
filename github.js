@@ -8,7 +8,7 @@ async function createIssue(SiyaaJhawar, learning, Hi, body) {
   try {
     const issue = await octokit.issues.create({
       SiyaaJhawar,
-      learning-,
+      learning,
       Hi,
       body,
     });
