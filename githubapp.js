@@ -19,7 +19,7 @@ const headers = {
 };
 
 axios
-  .post('https://api.github.com/repos/SiyaaJhawar/learning-/issues', {
+  .get('https://api.github.com/repos/SiyaaJhawar/learning-/issues', {
     title: 'Hi',
     body: 'This is a sample code',
   }, { headers })
