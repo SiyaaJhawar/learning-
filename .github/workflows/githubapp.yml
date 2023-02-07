@@ -28,6 +28,7 @@ jobs:
    
     - run: npm install axios
     - run : npm install jsonwebtoken
+    - run : npm install dotenv
     - run: node githubapp.js
      
     
