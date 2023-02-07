@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
 
-const privateKey = 'SHA256:tNMsW3nOASQbbaPQb/gJq4KUlwdrP4GPe+hpakZxx1w=';
+const privateKey = 'PRIVATE';
 const payload = {
   iat: Math.floor(Date.now() / 1000),
   exp: Math.floor(Date.now() / 1000) + (10 * 60),
