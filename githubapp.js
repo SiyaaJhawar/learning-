@@ -1,11 +1,13 @@
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
 
-const privateKey = 'PRIVATE';
+const privateKey = process.env.PRIVATE_KEY;
+const appId = process.env.APP_ID;
+
 const payload = {
   iat: Math.floor(Date.now() / 1000),
   exp: Math.floor(Date.now() / 1000) + (10 * 60),
-  iss: '281301',
+  iss: appId,
 };
 const token = jwt.sign(payload, privateKey, { algorithm: 'HS256' });
 
@@ -25,9 +27,6 @@ axios
   .catch((error) => {
     console.error(error);
   });
-
-
-
 
 
 
