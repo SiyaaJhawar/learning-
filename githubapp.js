@@ -1,28 +1,21 @@
-const jwt = require('jsonwebtoken');
-const axios = require('axios');
+const axios = require("axios");
 
-const privateKey = 'tzGK/2qqqpwA+RL5vNtRlt+i1WMU/aEWxGJjdWBK/Ow=';
-const payload = {
-  iat: Math.floor(Date.now() / 1000),
-  exp: Math.floor(Date.now() / 1000) + (10 * 60),
-  iss: '281301',
+const auth = {
+  username: "SiyaaJhawar",
+  password: "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"
 };
-const token = jwt.sign(payload, privateKey, { algorithm: 'base64' });
 
-const headers = {
-  Authorization: `Bearer ${token}`,
-  'User-Agent': 'SiyaaJhawar',
+const issue = {
+  title: "Hi",
+  body: "This is the body of the test issue"
 };
 
 axios
-  .post('https://api.github.com/repos/SiyaaJhawar/learning-/issues', {
-    title: 'Hi',
-    body: 'This is a sample code for githubapp',
-  }, { headers })
-  .then((response) => {
+  .post("https://api.github.com/repos/SiyaaJhawar/learning-/issues", issue, { auth })
+  .then(response => {
     console.log(response.data);
   })
-  .catch((error) => {
+  .catch(error => {
     console.error(error);
   });
 
