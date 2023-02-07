@@ -18,4 +18,4 @@ async function createIssue(SiyaaJhawar, learning, Hi, body) {
   }
 }
 
-createIssue("SiyaaJhawar", "learning-", "Hi", "Issue body");
+createIssue("SiyaaJhawar", "learning", "Hi", "Issue body");
