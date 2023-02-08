@@ -3,6 +3,7 @@ const axios = require('axios');
 const fs = require("fs");
 const privateKey = fs.readFileSync("private_key.pem","utf8");
 const appId = 281301
+const installation_id=1
 
 const header = {
     alg: "RS256",
@@ -13,6 +14,7 @@ const payload = {
   iat: Math.floor(Date.now() / 1000),
   exp: Math.floor(Date.now() / 1000) + (10 * 60),
   iss:  appId
+  
 };
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
 
