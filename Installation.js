@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 const appId = '281301';
-const privateKey = 'PRIVATE_KEY';
+const privateKey = '/6lW3ruWVOj5i6hNXBn+iXE2rnu/ZsrV18Cc91KgRKk=';
 const installationId = '1';
 
 async function getInstallationToken() {
