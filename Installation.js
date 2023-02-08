@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 const appId = '281301';
-const privateKey = '-----BEGIN RSA PRIVATE KEY-----
+const privateKey = '
 MIIEpAIBAAKCAQEA039n8XG/A+Y4EQQ099YrFTnhNAi6PnUs68ZAtNrnlM3BvWSY
 5sTyErXOUfKQRh5vZ/YkE82MgSsyWWOQRZeIZuT9OwmdsSbESi4smM6COGjszxGK
 BuGPLiLYsnck8cvDfNpOWvwUTeOABVwmyPMx/HTAtSiQghb/NkFM2kr2gys03Ww/
@@ -27,8 +27,8 @@ QC/zozdOkTIzk9pDDKvHYZZO6DRo6AMX3qpdKBm0NlgOWYwIVNtzQQB4Vhiuef1Z
 FXFxPDbOhShnYcCsiE5kF9JN7GCVX7yIgKGq7zwBG/+FR9PX0VIQvHyR+daqbXPM
 pMpZVwKBgQDr3i490fzNV1lnQbgZ2kovpwepA59PfRt8A/n2/rXUR/XinBdsjyE4
 epSifJ/GW5ZlOm5MStZNpU2yXZaAJL0He6+wINDHzhb5y17oASLJFdyYWz07+sS9
-P/1Dq27wuXwIUjEiNZtBQoKMfSc3piC5TpgYJL0aOKMjVEAFeWZItg==
------END RSA PRIVATE KEY-----';
+P/1Dq27wuXwIUjEiNZtBQoKMfSc3piC5TpgYJL0aOKMjVEAFeWZItg==';
+
 const installationId = '1';
 
 async function getInstallationToken() {
