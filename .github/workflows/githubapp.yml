@@ -35,7 +35,7 @@ jobs:
     - run : node jsonweb.js
     - run : node githubapp.js
     - run: |
-     curl -i -H "Authorization: Bearer YOUR_JWT" -H "Accept: application/vnd.github+json" https://api.github.com/app
+        curl -i -H "Authorization: Bearer YOUR_JWT" -H "Accept:application/vnd.github+json" https://api.github.com/app
      
  
     
