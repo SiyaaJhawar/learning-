@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const appId = "281301";
 
-const headers = {
+
  const headers = {
   Accept: "application/vnd.github+json",
   Authorization: `Bearer <jwt_token>`
