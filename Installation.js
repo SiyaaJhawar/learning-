@@ -18,18 +18,10 @@ async function getInstallationToken() {
   };
   const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
 
-  const response = await axios({
-    method: 'post',
-    url: `https://api.github.com/app/installations/1/access_tokens`,
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${token}`
-    }
+  axios.get(`https://api.github.com/app/installations/${installationId}/access_tokens`, { headers })
+  .then(response => {
+    console.log(response.data.token);
+  })
+  .catch(error => {
+    console.error(error);
   });
-
-  return response.data.token;
-}
-
-getInstallationToken().then(token => {
-  console.log(token);
-});
