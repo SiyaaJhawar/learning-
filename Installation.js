@@ -1,14 +1,13 @@
 const axios = require("axios");
 
-const appId = "281301";
+const url = "https://api.github.com/app/installations";
 
-
- const headers = {
+const headers = {
   Accept: "application/vnd.github+json",
-  Authorization: `Bearer <jwt_token>`
+  Authorization: `Bearer ***`
 };
 
-axios.get(`https://api.github.com/app/installations`, {headers})
+axios.get(url, { headers })
   .then(response => {
     console.log(response.data);
   })
