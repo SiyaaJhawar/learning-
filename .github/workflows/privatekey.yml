@@ -17,11 +17,11 @@ jobs:
 
     - name: Generate private key
       run: |
-        openssl genpkey -algorithm RSA -out private_key.pem -aes256
+       openssl rsa -in private_key.pem -pubout -outform DER | openssl sha256 -binary | openssl base64
       
 
     - name: Store private key as a GitHub Actions secret
     
       with:
         name: private_key
-        key-file: private_key.pem
+        path: private_key.pem
