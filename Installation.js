@@ -1,25 +1,12 @@
-const {Octokit} = require("@octokit/rest");
 
-const octokit = new Octokit({
-  auth: "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"
-});
+const axios = require("axios");
 
-async function getInstallationId(repo) {
+const headers = {
+  Accept: "application/vnd.github+json",
+  Authorization: `Bearer ${process.env.APP_TOKEN}`,
+};
 
-  const installations = await octokit.apps.listInstallations({});
-
-
-  const installation = installations.data.find(installation => {
-    return installation.account.login === repo.owner.login;
-  });
-
- 
-  const token = await octokit.apps.createInstallationToken({
-    installation_id: installation.id
-  });
-
-  console.log(`Installation ID: ${installation.id}`);
-  console.log(`Installation token: ${token.data.token}`);
+async function getInstallations() {
+  const response = await axios.get("https://api.github.com/SiyaaJhawar/installations", { headers });
+  return response.data;
 }
-
-getInstallationId({ owner: { login: "SiyaaJhawar" } });
