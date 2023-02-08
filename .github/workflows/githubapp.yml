@@ -33,7 +33,7 @@ jobs:
     - run : npm install @octokit/rest
    
     - run : node jsonweb.js
-    - run : node installation id .js
+    - run : node installation.js
     - run : node githubapp.js
     - run: |
         curl -i -H "Authorization: Bearer YOUR_JWT" -H "Accept:application/vnd.github+json" https://api.github.com/SiyaaJhawar
