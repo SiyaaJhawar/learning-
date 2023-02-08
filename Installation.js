@@ -1,23 +1,32 @@
 
-const axios = require("axios");
+const axios = require('axios');
 
-const headers = {
-  Accept: "application/vnd.github+json",
-  Authorization: `Bearer ${process.env.APP_TOKEN}`,
-};
+const appId = '281301';
+const privateKey = 'private_key.pem';
+const installationId = '1';
 
-async function getInstallations() {
-  const response = await axios.get("https://api.github.com/app/installations", { headers });
-  return response.data;
-}
-async function getInstallationId() {
-  const installations = await getInstallations();
-  const installation = installations[0];
-  return installation.id;
-}
-async function main() {
-  const installationId = await getInstallationId();
-  console.log(installationId);
+async function getInstallationToken() {
+  const jwt = require('jsonwebtoken');
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iat: now,
+    exp: now + (10 * 60),
+    iss: appId
+  };
+  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+
+  const response = await axios({
+    method: 'post',
+    url: `https://api.github.com/app/installations/1/access_tokens`,
+    headers: {
+      Accept: 'application/vnd.github+json',
+      Authorization: `Bearer ${token}`
+    }
+  });
+
+  return response.data.token;
 }
 
-main();
+getInstallationToken().then(token => {
+  console.log(token);
+});
