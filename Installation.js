@@ -13,7 +13,7 @@ async function getInstallationToken() {
     exp: now + (10 * 60),
     iss: appId
   };
-  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+  const token = jwt.sign(payload, privateKey, { algorithm: 'HS256' });
 
   const response = await axios({
     method: 'post',
