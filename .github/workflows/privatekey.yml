@@ -14,7 +14,7 @@ jobs:
 
     - name: Generate private key
       run: |
-       openssl rsa -in PATH_TO_PEM_FILE -pubout -outform DER | openssl sha256 -binary | openssl base64
+       openssl rsa -in private_key.pem -pubout -outform DER | openssl sha256 -binary | openssl base64
 
     - name: Store private key as a secret
       run: |
