@@ -7,12 +7,12 @@ const headers = {
 };
 
 async function getInstallations() {
-  const response = await axios.get("https://api.github.com/SiyaaJhawar/learning-/installations", { headers });
+  const response = await axios.get("https://api.github.com/SiyaaJhawar/installations", { headers });
   return response.data;
 }
 async function getInstallationId() {
   const installations = await getInstallations();
-  const installation = installations[0]; // assuming you want to use the first installation
+  const installation = installations[0];
   return installation.id;
 }
 async function main() {
