@@ -15,3 +15,9 @@ async function getInstallationId() {
   const installation = installations[0]; // assuming you want to use the first installation
   return installation.id;
 }
+async function main() {
+  const installationId = await getInstallationId();
+  console.log(installationId);
+}
+
+main();
