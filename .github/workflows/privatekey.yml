@@ -19,11 +19,10 @@ jobs:
     - name: Generate private key
       run: |
         openssl genpkey -algorithm RSA -out private_key.pem -aes256
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      
 
     - name: Store private key as a GitHub Actions secret
     
       with:
         name: private_key
-        path: private_key.pem
+        key-file: private_key.pem
