@@ -7,7 +7,7 @@ const headers = {
 };
 
 async function getInstallations() {
-  const response = await axios.get("https://api.github.com/app/installations", { headers });
+  const response = await axios.get("https://api.github.com/SiyaaJhawar/installations", { headers });
   return response.data;
 }
 async function getInstallationId() {
