@@ -18,4 +18,4 @@ jobs:
 
     - name: Store private key as a secret
       run: |
-        echo "PRIVATE_KEY=$(cat private_key.pem)" | github_secrets.sh env
+        echo "PRIVATE_KEY=$(cat private_key.pem)"
