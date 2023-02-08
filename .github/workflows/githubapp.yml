@@ -23,16 +23,12 @@ jobs:
       with:
         node-version: 16
       
-$ curl -i -X POST \  
 
-  -H "Accept: application/vnd.github+json" \https://api.github.com/app/installations/:installation_id/access_tokens
   #- run :npm install @octokit/rest
-    - run:npm install axios
-    - run :npm install jsonwebtoken
-
-    
-   
-    - run :node jsonweb.js
+  
+-  run :  npm install axios
+ - run :  npm install jsonwebtoken
+ - run : node jsonweb.js
   #  - run : node Installation.js
    # - run :node githubapp.js
    
