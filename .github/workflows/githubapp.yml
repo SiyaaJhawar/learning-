@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
  
 
+
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
 jobs:
   create-issue:
