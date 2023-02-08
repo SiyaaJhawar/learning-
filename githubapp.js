@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
 const fs = require("fs");
-const privateKey = fs.readFileSync(process.env.PRIVATE_KEY || "private_key.pem", "utf8");
+const privateKey = fs.readFileSync(process.env.PRIVATE_KEY,"utf8");
 const appId = 281301
 
 const header = {
