@@ -4,8 +4,7 @@ name: Generate Private Key
   
 on:
   push:
-    branches:
-      - main
+   
   workflow_dispatch:
 
 jobs:
