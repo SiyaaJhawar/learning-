@@ -29,7 +29,7 @@ jobs:
    
     - run: npm install axios
     - run : npm install jsonwebtoken
-  #  - run : npm install dotenv
+
     - run : npm install @octokit/rest
    
     - run : node jsonweb.js
