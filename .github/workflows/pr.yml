@@ -1,0 +1,21 @@
+on:
+  pull_request:
+    types: [opened]
+  workflow_dispatch:
+jobs:
+  pull_request:
+    runs-on: ubuntu-latest
+
+   
+   
+     
+
+    steps:
+   
+      - name: Add a comment to the pull request
+     
+        with:
+         action: 'comment'
+         message: 'Hello from the GitHub Actions workflow!'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
