@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken');
 const appId = "281301";
 
 
-const privateKey = "MIIEpAIBAAKCAQEAnRO/swLoBk3hW9mEqfZGtjhAvsVqDl2d6UiEpL3imElJqy21
+const privateKey = "-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAnRO/swLoBk3hW9mEqfZGtjhAvsVqDl2d6UiEpL3imElJqy21
 KYSJUK+ITQ73XdLU4OuEJ5iExezQOOnwHWqpe6Q+4MNy+/MwdxFdk+zR04Enh9aD
 ulsVLf5+BRlaxg6pWBEvZIyKst+Xi4XSLZS9HU3/rjRpsQtFqrRUOUBJ2kUXBBne
 dZjcJdz4fexznMExJLViXamKPag6GjSzIC+C0cqXe8CsQef9Y4H6ZPHU7XpVMa8k
@@ -29,7 +30,8 @@ Ujuv83Gn/1E5/LjCNckmsCSSkS4cAPFN/4HSDo64HFEeBFPcszOSuWiQ9zA/k1Qa
 oxdkayp8wzVPrExACHfi/IwhIclvGmBkFaqsfR2RCyndzjqWv4rc4UP94UiGXsCz
 3o0ewQKBgQDJVJn3WTrNS9D2TSduwc+sPhgDyGv5Kj2qZqqB9TNo312VjIT2iGeG
 oYXJPOmwz+qZk9iFtC3/9zJOgslIG7XWIZDg4XHItXdhkU0+EoG1bIK9AU0D4R72
-kM3ciolsV2m8ladw+ADH1knuGOU9OpX7I3zk5xLWGjVaHbiwKNltBg==";
+kM3ciolsV2m8ladw+ADH1knuGOU9OpX7I3zk5xLWGjVaHbiwKNltBg==
+-----END RSA PRIVATE KEY-----";
 
 
 const repo = "SiyaaJhawar/learning-";
