@@ -1,11 +1,8 @@
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
 
-// Replace with your GitHub App ID
-const appId = $secrets.APP_ID;
 
-// Replace with the private key for your GitHub App
-const privateKey = $secrets.PRIVATE_KEY;
+const secrets = JSON.parse(process.env.SECRET_KEY);
 
 
 const repo = "SiyaaJhawar/learning-";
