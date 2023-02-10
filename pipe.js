@@ -19,7 +19,7 @@ const url = `https://api.github.com/repos/SiyaaJhawar/learning-/commits//statuse
 
 const token = jwt.sign({ iat: Math.floor(Date.now() / 1000), exp: Math.floor(Date.now() / 1000) + (10 * 60), iss: appId }, privateKey, { algorithm: 'RS256' });
 
-// Set the headers
+
 const headers = {
   "User-Agent": "SiyaaJhawar",
   "Authorization": `Bearer ${token}`,
@@ -43,4 +43,4 @@ axios.get(url, { headers })
 
 
 
-Regenerate response
+
