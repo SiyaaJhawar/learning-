@@ -19,5 +19,5 @@ jobs:
         curl -X POST \
         -H "Authorization: Bearer $GITHUB_TOKEN" \
         -H "Accept: application/vnd.github+json" \
-        -d "{\"title\":\"Hello World\",\"body\":\"This is a test issue created from GitHub Actions\"}" \
+        -d "{\"title\":\"Hello World\",\"body\":\"This is an example issue created using the GitHub API.\"}" \
         https://api.github.com/repos/SiyaaJhawar/learning-/issues
