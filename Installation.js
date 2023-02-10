@@ -1,19 +1,29 @@
 const axios = require("axios");
 
-const url=https://api.github.com/app/installations
+async function createInstallationToken(installationId) {
+  try {
+    const response = await axios.post(
+      `https://api.github.com/app/installations/1/access_tokens`,
+      {},
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          Authorization: `Bearer ${YOUR_APP_TOKEN}`
+        }
+      }
+    );
 
-const headers = {
-  Accept: "application/vnd.github+json",
-  Authorization: `Bearer ***`
-};
-
-axios.get(url, { headers })
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
+    return response.data.token;
+  } catch (error) {
     console.error(error);
-  });
+    throw error;
+  }
+}
+
+
+
+
+
 
 
 
