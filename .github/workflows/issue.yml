@@ -15,6 +15,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        curl -H 'Authorization: Bearer $GITHUB_TOKEN' https://api.github.com/SiyaaJhawar/learning-
         curl -X POST \
         -H "Authorization: Bearer $GITHUB_TOKEN" \
         -H "Accept: application/vnd.github+json" \
