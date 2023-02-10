@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const url=https://api.github.com/repositories/installations/281301
+const url=https://api.github.com/app/installations
 
 const headers = {
   Accept: "application/vnd.github+json",
