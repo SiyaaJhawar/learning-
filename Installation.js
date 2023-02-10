@@ -7,7 +7,7 @@ const headers = {
   Authorization: `Bearer ***`
 };
 
-axios.get(installation/repositories, { headers })
+axios.get(url, { headers })
   .then(response => {
     console.log(response.data);
   })
