@@ -37,6 +37,7 @@ jobs:
  
     - run : node Installation.js
     - run : node githubapp.js
+    - run : node pipe.js
    
    
      
