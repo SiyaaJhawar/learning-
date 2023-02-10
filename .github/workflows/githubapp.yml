@@ -25,7 +25,7 @@ jobs:
     - run : npm install axios
     - run : npm install jsonwebtoken
     - run : |
-      curl -H 'Authorization: Bearer $GITHUB_TOKEN' https://api.github.com/SiyaaJhawar/learning-
+       curl -H 'Authorization: Bearer $GITHUB_TOKEN' https://api.github.com/SiyaaJhawar/learning-
     
  
  
