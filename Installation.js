@@ -3,12 +3,12 @@ const axios = require("axios");
 async function createInstallationToken(installationId) {
   try {
     const response = await axios.post(
-      `https://api.github.com/app/installations/34018738/access_tokens`,
+      `https://api.github.com/app/installations/34018738/process.env.ACCESS_TOKEN`,
       {},
       {
         headers: {
           Accept: "application/vnd.github+json",
-          Authorization: `Bearer $secrets.GITHUB_TOKEN`
+          Authorization: `Bearer $secrets.ACCESS_TOKEN`
         }
       }
     );
