@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
 const fs = require("fs");
+require('dotenv').config()
 const privateKey = fs.readFileSync("private_key.pem","utf8");
-const appId = 281301
-const installation_id=1
+const appId = process.env.APP_ID
+const installation_id=process.env.INSTALLATION_ID
 
 const header = {
     alg: "RS256",
@@ -19,7 +20,7 @@ const payload = {
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
 
 const headers = {
-  Authorization: `Bearer ***`,
+  Authorization: `Bearer ${process.env.AUTHORIZATION}`,
   'User-Agent': 'SiyaaJhawar',
 };
 
