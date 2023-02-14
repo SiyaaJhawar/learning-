@@ -9,7 +9,7 @@ on:
 
 env:
    PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-   TOKEN: ${{secrets.ACCESS_TOKEN}}
+   TOKEN: ${{secrets.TOKEN}}
 
 jobs:
   create-issue:
