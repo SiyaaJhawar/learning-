@@ -3,7 +3,7 @@ const axios = require("axios");
 async function createInstallationToken(installationId) {
   try {
     const response = await axios.post(
-      `https://api.github.com/app/installations/34018738/process.env.ACCESS_TOKEN`,
+      `https://api.github.com/app/installations/34018738/process.env.TOKEN`,
       {},
       {
         headers: {
