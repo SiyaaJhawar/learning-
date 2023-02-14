@@ -14,7 +14,7 @@ const header = {
 const payload = {
   iat: Math.floor(Date.now() / 1000),
   exp: Math.floor(Date.now() / 1000) + (10 * 60),
-  iss:  appId
+  iss: process.env.APP_ID,
   
 };
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
