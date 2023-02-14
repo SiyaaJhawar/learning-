@@ -15,11 +15,28 @@ jobs:
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-       curl -X POST \
-          -H "Authorization: Bearer $GITHUB_TOKEN" \
-          -H "Accept: application/vnd.github+json" \
-          -d "{\"title\":\"Hello World\",\"body\":\"This is an example issue created using the GitHub API.\"}" \
-        https://api.github.com/repos/SiyaaJhawar/learning-/issues
+         curl --request POST \
+         --url https://api.github.com/repos/:owner/:repo/generate \
+         --header 'authorization: Bearer ACCESS_TOKEN' \
+         --header 'content-type: application/json' \
+         --data '{
+                  "owner": "SiyaaJhawar",
+              "repo": "learning-",
+              "name": "Github-apps-SiyaaJhawar",
+           "description": "My new repository created from a template.",
+            "private": false
+             }'
+      # curl -X POST \
+       #   -H "Authorization: Bearer $GITHUB_TOKEN" \
+       #   -H "Accept: application/vnd.github+json" \
+        #  -d "{\"title\":\"Hello World\",\"body\":\"This is an example issue created using the GitHub API.\"}" \
+       # https://api.github.com/repos/SiyaaJhawar/learning-/issues
+
+   
+
+
+
+
 
       # echo GITHUB_TOKEN=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
       # curl https://api.github.com/repos/SiyaaJhawar/learning-/issues | jq
