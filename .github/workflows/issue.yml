@@ -15,6 +15,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+         curl X  GET https://github.com/login/oauth/authorize
           curl -X POST https://github.com/login/oauth/access_token
        #  curl -H "Authorization: Bearer OAUTH-TOKEN" https://api.github.com/SiyaaJhawar
          #curl -X POST \
