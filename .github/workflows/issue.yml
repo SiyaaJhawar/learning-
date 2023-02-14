@@ -15,9 +15,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        
-        curl -X POST \
-        -H "Authorization: Bearer $GITHUB_TOKEN" \
-        -H "Accept: application/vnd.github+json" \
-        -d "{\"title\":\"Hello World\",\"body\":\"This is an example issue created using the GitHub API.\"}" \
-        https://api.github.com/repos/SiyaaJhawar/learning-/issues
+          curl -X POST https://github.com/login/oauth/access_token
+       #  curl -H "Authorization: Bearer OAUTH-TOKEN" https://api.github.com/SiyaaJhawar
+         #curl -X POST \
+      #  -H "Authorization: Bearer $GITHUB_TOKEN" \
+       # -H "Accept: application/vnd.github+json" \
+      #  -d "{\"title\":\"Hello World\",\"body\":\"This is an example issue created using the GitHub API.\"}" \
+      #  https://api.github.com/repos/SiyaaJhawar/learning-/issues
