@@ -20,7 +20,7 @@ const payload = {
 const token = jwt.sign(payload, privateKey, { algorithm: 'RS256', header: header } );
 
 const headers = {
-  Authorization: `Bearer ${process.env.AUTHORIZATION}`,
+  Authorization: `Bearer ${token}`,
   'User-Agent': 'SiyaaJhawar',
 };
 
