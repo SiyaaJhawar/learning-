@@ -8,7 +8,7 @@ async function createInstallationToken(installationId) {
       {
         headers: {
           Accept: "application/vnd.github+json",
-          Authorization: `Bearer $secrets.ACCESS_TOKEN`
+          Authorization: `Bearer $secrets.TOKEN`
         }
       }
     );
