@@ -1,4 +1,5 @@
-import { XMLHttpRequest } from "xmlhttprequest";
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
 
  
 var xhr = new XMLHttpRequest();
