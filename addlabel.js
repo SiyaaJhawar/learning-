@@ -33,39 +33,32 @@ async function compareCommitCommentWithJiraIssue() {
     });
     console.log(issueResponse);
 
-   if (issueResponse.data.issues.length === 0) {
-  console.log(`Jira issue ${defectId} not found`);
-  return;
-}
-
-// add the label to the first issue found
-const issueKey = issueResponse.data.issues[0].key;
-const labelResponse = await axios.post(`${jiraUrl}/issue/${issueKey}/labels`, { "add": ["int_deploy"] }, {
-  headers: {
-    "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
-    "Content-Type": "application/json"
-  }
-});
-console.log(`Label added to Jira issue ${issueKey}`);
-    } else {
+    // check if there are any issues with the provided defect ID
+    const matchingIssues = issueResponse.data.issues.filter(issue => issue.key.startsWith(defectId));
+    if (matchingIssues.length === 0) {
       console.log(`Jira issue ${defectId} not found`);
+      return;
     }
+
+    // add the label to the first matching issue
+    const issueKey = matchingIssues[0].key;
+    const labelResponse = await axios.post(`${jiraUrl}/issue/${issueKey}/labels`, { "add": ["int_deploy"] }, {
+      headers: {
+        "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+        "Content-Type": "application/json"
+      }
+    });
+    console.log(`Label added to Jira issue ${issueKey}`);
   } catch (err) {
     console.error(`Failed to add label to Jira issue ${defectId}`, err);
   }
 }
 
-
-    async function addLabelsToIssues() {
-      for (const defectId of defectIds) {
-        await addLabelToIssue(defectId);
-      }
-    }
-
-    addLabelsToIssues();
-  } catch (err) {
-    console.error(`Failed to compare commit comments with Jira issues: ${err}`);
+async function addLabelsToIssues() {
+  for (const defectId of defectIds) {
+    await addLabelToIssue(defectId);
   }
 }
-compareCommitCommentWithJiraIssue();
+
+addLabelsToIssues();
 
