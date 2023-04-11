@@ -25,7 +25,7 @@ async function compareCommitCommentWithJiraIssue() {
 
    async function addLabelToIssue(defectId) {
   try {
-    const issueResponse = await axios.get(`${jiraUrl}/search?jql=text~"${defectId}"`, {
+    const issueResponse = await axios.get(jiraUrl, {
       headers: {
         "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
         "Accept": "application/json"
