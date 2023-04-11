@@ -22,33 +22,38 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    for (const defectId of defectIds) {
-        const issueResponse = await axios.get(jiraUrl, {
-         headers: {
-         "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-          "Accept": "application/json"
+   async function addLabelToIssue(defectId) {
+  try {
+    const issueResponse = await axios.get(`${jiraUrl}/issue/${defectId}`, {
+      headers: {
+        "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+        "Accept": "application/json"
       }
-      });
-      console.log(issueResponse.data);
-      if (issueResponse.data.key === defectId) {
-        const labelResponse = await axios.post(`${jiraUrl}/issue/${defectId}/labels`, { 
-  labels: ['int_deploy']
-}, {
-  headers: {
-    "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-    "Content-Type": "application/json"
-  }
-});
+    });
 
-        console.log(`Label added to Jira issue ${defectId}`);
-      }
+    if (issueResponse.data.key === defectId) {
+      const labelResponse = await axios.post(`${jiraUrl}/issue/${defectId}/labels`, { "add": ["int_deploy"] }, {
+        headers: {
+          "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+          "Content-Type": "application/json"
+        }
+      });
+      console.log(`Label added to Jira issue ${defectId}`);
+    } else {
+      console.log(`Jira issue ${defectId} not found`);
     }
   } catch (err) {
-    console.error('Failed to compare GitHub commit comments with Jira issues', err);
+    console.error(`Failed to add label to Jira issue ${defectId}`, err);
   }
 }
 
-compareCommitCommentWithJiraIssue();
+async function addLabelsToIssues() {
+  for (const defectId of defectIds) {
+    await addLabelToIssue(defectId);
+  }
+}
+
+addLabelsToIssues();
 
 
 
