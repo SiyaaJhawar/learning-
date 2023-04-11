@@ -23,30 +23,34 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    async function addLabelToIssue(defectId) {
-      try {
-        const issueResponse = await axios.get(`${jiraUrl}/issue/${defectId}`, {
-          headers: {
-            "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
-            "Accept": "application/json"
-          }
-        });
-
-        if (issueResponse.data.key === defectId) {
-          const labelResponse = await axios.post(`${jiraUrl}/issue/${defectId}/labels`, { "add": ["int_deploy"] }, {
-            headers: {
-              "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
-              "Content-Type": "application/json"
-            }
-          });
-          console.log(`Label added to Jira issue ${defectId}`);
-        } else {
-          console.log(`Jira issue ${defectId} not found`);
-        }
-      } catch (err) {
-        console.error(`Failed to add label to Jira issue ${defectId}`, err);
+   async function addLabelToIssue(defectId) {
+  try {
+    const issueResponse = await axios.get(`${jiraUrl}/search?jql=text~"${defectId}"`, {
+      headers: {
+        "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+        "Accept": "application/json"
       }
+    });
+
+    const issues = issueResponse.data.issues;
+    const matchingIssues = issues.filter(issue => issue.key === defectId);
+
+    if (matchingIssues.length > 0) {
+      const labelResponse = await axios.post(`${jiraUrl}/issue/${defectId}/labels`, { "add": ["int_deploy"] }, {
+        headers: {
+          "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+          "Content-Type": "application/json"
+        }
+      });
+      console.log(`Label added to Jira issue ${defectId}`);
+    } else {
+      console.log(`Jira issue ${defectId} not found`);
     }
+  } catch (err) {
+    console.error(`Failed to add label to Jira issue ${defectId}`, err);
+  }
+}
+
 
     async function addLabelsToIssues() {
       for (const defectId of defectIds) {
