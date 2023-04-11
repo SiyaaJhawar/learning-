@@ -27,7 +27,7 @@ async function compareCommitCommentWithJiraIssue() {
   try {
     const issueResponse = await axios.get(`${jiraUrl}/search?filter=allissues=text~"${defectId}"`, {
       headers: {
-        "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+        "Authorization": `Basic ${btoa(`${username}:${password}`)}`,
         "Accept": "application/json"
       }
     });
