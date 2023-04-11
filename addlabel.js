@@ -31,6 +31,7 @@ async function compareCommitCommentWithJiraIssue() {
         "Accept": "application/json"
       }
     });
+    console.log(issueResponse);
 
     const issues = issueResponse.data.issues;
     const matchingIssues = issues.filter(issue => issue.key === defectId);
