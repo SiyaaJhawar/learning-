@@ -23,7 +23,7 @@ async function compareCommitCommentWithJiraIssue() {
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
     for (const defectId of defectIds) {
-        const issueResponse = await axios.get(`${jiraUrl}/issue/${defectId}`, {
+        const issueResponse = await axios.get(`${jiraUrl}`, {
          headers: {
          "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
           "Accept": "application/json"
