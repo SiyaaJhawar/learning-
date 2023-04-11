@@ -1,6 +1,6 @@
 const axios = require('axios');
 const btoa = require('btoa');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+//var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 
  
@@ -28,32 +28,34 @@ async function compareCommitCommentWithJiraIssue() {
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
     async function addLabelToIssue(defectId) {
-      try {
-             xhr.open("GET", "https://swgup.atlassian.net/rest/api/3/search?filter=allissues", true);
-             xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + apiToken));
-              xhr.send();
-      } 
-      
-        // check if there are any issues with the provided defect ID
-        const matchingIssues = issueResponse.data.issues.filter(issue => issue.key.startsWith(defectId));
-        if (matchingIssues.length === 0) {
-          console.log(`Jira issue ${defectId} not found`);
-          return;
-        }
-
-        // add the label to the first matching issue
-        const issueKey = matchingIssues[0].key;
-        const labelResponse = await axios.post(`${jiraUrl}/issue/${issueKey}/labels`, { "add": ["int_deploy"] }, {
-          headers: {
-            "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
-            "Content-Type": "application/json"
-          }
-        });
-        console.log(`Label added to Jira issue ${issueKey}`);
-      } catch (err) {
-        console.error(`Failed to add label to Jira issue ${defectId}`, err);
+  try {
+    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=PROJKEY AND text~"${defectId}"`, {
+      auth: {
+        username: jiraUsername,
+        password: jiraapitoken
       }
+    });
+    
+    // check if there are any issues with the provided defect ID
+    const matchingIssues = issueResponse.data.issues.filter(issue => issue.key.startsWith(defectId));
+    if (matchingIssues.length === 0) {
+      console.log(`Jira issue ${defectId} not found`);
+      return;
     }
+
+    // add the label to the first matching issue
+    const issueKey = matchingIssues[0].key;
+    const labelResponse = await axios.post(`${jiraUrl}/issue/${issueKey}/labels`, { "add": ["int_deploy"] }, {
+      headers: {
+        "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+        "Content-Type": "application/json"
+      }
+    });
+    console.log(`Label added to Jira issue ${issueKey}`);
+  } catch (err) {
+    console.error(`Failed to add label to Jira issue ${defectId}`, err);
+  }
+}
 
     async function addLabelsToIssues() {
       for (const defectId of defectIds) {
