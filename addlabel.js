@@ -4,7 +4,7 @@ const btoa = require('btoa');
 
 
  
-var xhr = new XMLHttpRequest();
+//var xhr = new XMLHttpRequest();
 
 const jiraUrl = 'https://swgup.atlassian.net/rest/api/2';
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
