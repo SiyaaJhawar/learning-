@@ -33,17 +33,20 @@ async function compareCommitCommentWithJiraIssue() {
     });
     console.log(issueResponse);
 
-    const issues = issueResponse.data.issues;
-    const matchingIssues = issues.filter(issue => issue.key === defectId);
+   if (issueResponse.data.issues.length === 0) {
+  console.log(`Jira issue ${defectId} not found`);
+  return;
+}
 
-    if (matchingIssues.length > 0) {
-      const labelResponse = await axios.post(`${jiraUrl}/issue/${defectId}/labels`, { "add": ["int_deploy"] }, {
-        headers: {
-          "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
-          "Content-Type": "application/json"
-        }
-      });
-      console.log(`Label added to Jira issue ${defectId}`);
+// add the label to the first issue found
+const issueKey = issueResponse.data.issues[0].key;
+const labelResponse = await axios.post(`${jiraUrl}/issue/${issueKey}/labels`, { "add": ["int_deploy"] }, {
+  headers: {
+    "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
+    "Content-Type": "application/json"
+  }
+});
+console.log(`Label added to Jira issue ${issueKey}`);
     } else {
       console.log(`Jira issue ${defectId} not found`);
     }
