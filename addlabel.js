@@ -1,10 +1,15 @@
 const axios = require('axios');
 const btoa = require('btoa');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+
+ 
+var xhr = new XMLHttpRequest();
 
 const jiraUrl = 'https://swgup.atlassian.net/rest/api/2';
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
 const jiraUsername = process.env.JIRA_USERNAME;
-const jiraPassword = process.env.JIRA_API_TOKEN;
+const apitoken = process.env.JIRA_API_TOKEN;
 const username = process.env.GITHUB_USERNAME;
 const password = process.env.GITHUB_API_TOKEN;
 
@@ -24,14 +29,11 @@ async function compareCommitCommentWithJiraIssue() {
 
     async function addLabelToIssue(defectId) {
       try {
-        const issueResponse = await axios.get(`${jiraUrl}/search?filter=allissues`, {
-          headers: {
-            "Authorization": `Basic ${btoa(`${username}:${password}`)}`,
-            "Accept": "application/json"
-          }
-        });
-        console.log(issueResponse);
-
+             xhr.open("GET", "https://swgup.atlassian.net/rest/api/3/search?filter=allissues", true);
+             xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + apiToken));
+              xhr.send();
+      } 
+      
         // check if there are any issues with the provided defect ID
         const matchingIssues = issueResponse.data.issues.filter(issue => issue.key.startsWith(defectId));
         if (matchingIssues.length === 0) {
