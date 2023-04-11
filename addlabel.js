@@ -1,7 +1,7 @@
 const axios = require('axios');
 const btoa = require('btoa');
 
-const jiraUrl = 'https://swgup.atlassian.net/rest/api/2/search/?filter=allissues';
+const jiraUrl = 'https://swgup.atlassian.net/rest/api/3/search';
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
 const jiraUsername = process.env.JIRA_USERNAME;
 const jiraPassword = process.env.JIRA_API_TOKEN;
