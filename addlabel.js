@@ -15,6 +15,23 @@ const password = process.env.GITHUB_API_TOKEN;
 
 const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
+async function getAllIssues() {
+  try {
+    const response = await axios.get(`${jiraUrl}/search?jql=filter=allissues`, {
+      auth: {
+        username,
+        password
+      },
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+    return response.data.issues;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
 async function compareCommitCommentWithJiraIssue() {
   try {
     const commitsResponse = await axios.get(githubUrl, {
@@ -27,20 +44,15 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    ;
-    const issuesResponse = await axios.get(`${jiraUrl}/search?filter=allissues`, {
-      headers: {
-        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-        "Accept": "application/json"
-      }
-    });
-    const matchingIssues = issuesResponse.data.issues.filter(issue => defectIds.includes(issue.key));
+    const issues = await getAllIssues();
+    const matchingIssues = issues.filter(issue => defectIds.includes(issue.key));
     console.log(`Found the following issues in Jira for the defect IDs: ${matchingIssues.map(issue => issue.key)}`);
     return matchingIssues;
   } catch (error) {
     console.error(error);
   }
 }
+
 async function getMatchingIssues() {
   const matchingIssues = await compareCommitCommentWithJiraIssue();
   console.log(matchingIssues);
