@@ -34,7 +34,8 @@ async function compareCommitCommentWithJiraIssue() {
         "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
       }
     });
-    
+   console.log(`Username: ${jiraUsername}`);
+console.log(`API Token: ${jiraPassword}`);
     // check if there are any issues with the provided defect ID
     const matchingIssues = issueResponse.data.issues.filter(issue => issue.key.startsWith(defectId));
     if (matchingIssues.length === 0) {
