@@ -24,8 +24,8 @@ async function getAllIssuesForProject(projectKey) {
   }
 
 
-console.log(`Username: ${jiraUsername}`);
-console.log(`API Token: ${jiraPassword}`);
+//console.log(`Username: ${jiraUsername}`);
+//console.log(`API Token: ${jiraPassword}`);
     });
     return issueResponse.data.issues;
   } catch (error) {
