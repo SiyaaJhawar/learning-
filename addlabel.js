@@ -33,7 +33,7 @@ const commitsResponse = await axios.get(githubUrl, {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    fetch('https://swgup.atlassian.net/rest/api/3/search?jql=project=SWT', {
+    fetch('https://swgup.atlassian.net/rest/api/3/search?jql=project%20%3D%20SWT', {
       method: 'GET',
       headers: {
         'Authorization': `Basic ${Buffer.from(
