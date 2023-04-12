@@ -73,7 +73,7 @@ async function compareCommitCommentWithJiraIssue() {
       'jiraUsername:<jiraapitoken>'
     ).toString('base64')}`,
     'Accept': 'application/json',
-    
+    'Content-Type': 'application/json'
   },
   body: JSON.stringify({
     "update": {
