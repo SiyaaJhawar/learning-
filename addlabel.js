@@ -52,6 +52,7 @@ fetch('https://swgup.atlassian.net/rest/api/3/search?jql=project=SWT&fields=key'
   console.log(`Found the following issue keys: ${issueKeys}`);
 })
 .catch(err => console.error(err));
+  }
 
 compareCommitCommentWithJiraIssue();
 
