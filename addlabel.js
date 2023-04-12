@@ -67,7 +67,7 @@ async function compareCommitCommentWithJiraIssue() {
       
    
              
-                  fetch(`https://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
+                  fetch(`http://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
                    method: 'PUT',
                     headers: {
                 'Authorization': `Basic ${Buffer.from(
