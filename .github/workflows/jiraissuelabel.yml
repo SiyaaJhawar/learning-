@@ -30,7 +30,7 @@ jobs:
         run: node addlabel.js
 
         env:
-          JIRA_URL: ${{ secrets.JIRA_URL }}
+       
           JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
           JIRA_PASSWORD: ${{ secrets.JIRA_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
