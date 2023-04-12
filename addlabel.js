@@ -69,13 +69,12 @@ async function compareCommitCommentWithJiraIssue() {
              
                   fetch(`https://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
                    method: 'PUT',
-                    headers: {
-                'Authorization': `Basic ${Buffer.from(
-                'jiraUsername:<jiraapitoken>'
-    ).toString('base64')}`,
-   
-    'Content-Type': 'application/json'
-  },
+                headers: {
+        'Authorization': `Basic ${Buffer.from(
+          `${jiraUsername}:${jiraapitoken}`
+        ).toString('base64')}`,
+        'Content-Type': 'application/json'
+      },
  body: JSON.stringify({
     "update": {
       "labels": [
