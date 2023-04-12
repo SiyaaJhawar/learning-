@@ -80,7 +80,7 @@ async function compareCommitCommentWithJiraIssue() {
     "update": {
       "labels": [
         {
-          "add": "int_deploy"
+          "add": "int-deploy"
         }
       ]
     }
