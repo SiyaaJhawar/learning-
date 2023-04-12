@@ -78,9 +78,9 @@ async function compareCommitCommentWithJiraIssue() {
   body: JSON.stringify({
     "update": {
       "labels": [
-        {
-         "set":"int_deploy"
-        }
+        
+       "int_deploy"
+        
       ]
     }
   })
