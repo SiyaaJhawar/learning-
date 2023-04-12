@@ -1,12 +1,12 @@
 const axios = require('axios');
-const btoa = require('btoa');
+//const btoa = require('btoa');
 //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
+const fetch = require('node-fetch');
 
  
 //var xhr = new XMLHttpRequest();
 
-const jiraUrl = 'https://swgup.atlassian.net/rest/api/2/search?filter=allissues';
+
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
 const jiraUsername = process.env.JIRA_USERNAME;
 const jiraPassword = process.env.JIRA_API_TOKEN;
@@ -27,35 +27,25 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    const jiraIssuesResponse = await axios.get(jiraUrl, {
-      headers: {
-        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-        "Accept": "application/json"
-      },
-      params: {
-        jql: `key in (${defectIds.join(',')})`
-      }
-    });
-    const jiraIssues = jiraIssuesResponse.data.issues;
-
-    for (const issue of jiraIssues) {
-      if (defectIds.includes(issue.key)) {
-        await axios.post(`${jiraUrl}/issue/${issue.key}/label`, {
-          name: "int_deploy"
-        }, {
-          headers: {
-            "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-          }
-        });
-        console.log(`Added label 'int_deploy' to Jira issue ${issue.key}`);
-      }
-    }
-  } catch (error) {
-    console.error(error);
+    fetch('https://swgup.atlassian.net/rest/api/3/search?jql=project=SWT&fields=key', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Basic ${Buffer.from(
+      'jiraUsername:<jiraPassword>'
+    ).toString('base64')}`,
+    'Accept': 'application/json'
   }
-}
+})
+  .then(response => {
+    console.log(
+      `Response: ${response.status} ${response.statusText}`
+    );
+    return response.text();
+  })
+  .then(text => console.log(text))
+  .catch(err => console.error(err));
+
+   
 
 compareCommitCommentWithJiraIssue();
 
