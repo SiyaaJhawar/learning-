@@ -27,20 +27,14 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-   async function getAllIssuesForProject(projectKey) {
-  try {
-    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=${projectKey}`, {
-      headers: {
-        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-         "Accept": "application/json"
-      }
-    });
-   const projectKey = 'SWT'; // example project key
-const issues = await getAllIssuesForProject(projectKey);
-console.log(issues); // array of issue objects
-
-  
-
-   
-
-compareCommitCommentWithJiraIssue();
+    const projectKey = 'SWT'; // example project key
+    const issues = await getAllIssuesForProject(projectKey);
+    const matchingIssues = issues.filter(issue => defectIds.includes(issue.key));
+    console.log(`Found the following issues in Jira for the defect IDs: ${matchingIssues.map(issue => issue.key)}`);
+    return matchingIssues;
+  } catch (error) {
+    console.error(error);
+  }
+}
+const matchingIssues = await compareCommitCommentWithJiraIssue();
+console.log(matchingIssues); // array of matching issue objects
