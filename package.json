@@ -1,4 +1,6 @@
 {
-  "name": "Hit a webhook",
-  "main": "json.js"
+  "name": "my-project",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js"
 }
