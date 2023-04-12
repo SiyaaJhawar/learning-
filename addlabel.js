@@ -65,7 +65,7 @@ async function compareCommitCommentWithJiraIssue() {
         // Add label to the matching issues
         matchingIssueKeys.forEach(issueKey => {
        
-
+const  labelToAdd = "int_deploy"
                   fetch(`http://swgup.atlassian.net/rest/api/3/issue/${issueKey}`, {
   method: 'PUT',
   headers: {
@@ -78,10 +78,10 @@ async function compareCommitCommentWithJiraIssue() {
   body: JSON.stringify({
     "update": {
       "labels": [
-        
-       "int_deploy"
-        
-      ]
+      {
+        "add":labelToAdd
+      }
+    ]
     }
   })
 })
