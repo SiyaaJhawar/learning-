@@ -21,12 +21,14 @@ const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
 async function compareCommitCommentWithJiraIssue() {
   try {
-    const commitsResponse = await axios.get(githubUrl, {
-      headers: {
-        "Authorization": `Basic ${btoa(`${username}:${password}`)}`,
-        "Accept": "application/json"
-      }
-    });
+   const encodedCredentials = Buffer.from(`${username}:${password}`).toString('base64');
+const commitsResponse = await axios.get(githubUrl, {
+  headers: {
+    "Authorization": `Basic ${encodedCredentials}`,
+    "Accept": "application/json"
+  }
+});
+
     const commentTexts = commitsResponse.data.map(comment => comment.body);
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
