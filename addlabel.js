@@ -17,7 +17,7 @@ const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
 async function getAllIssuesForProject(projectKey) {
   try {
-    const jql = `project=${SWT}`;
+      const jql = `project=${projectKey}`;
     const response = await axios.get(`${jiraUrl}/search?jql=${jql}`, {
       headers: {
         "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
