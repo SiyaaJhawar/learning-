@@ -50,9 +50,18 @@ fetch('https://swgup.atlassian.net/rest/api/3/search?filter=allissues', {
   return response.json(); // Parse the response as JSON
 })
 .then(data => {
-  const issueKeys = data.issues.map(issue => issue.key); // Extract the keys of all the issues
-  console.log(`Found the following issue keys: ${issueKeys}`);
+ .then(data => {
+  if (data.issues && data.issues.length > 0) {
+    const issueKeys = data.issues.map(issue => issue.key); // Extract the keys of all the issues
+    console.log(`Found the following issue keys: ${issueKeys.join(', ')}`);
+  } else {
+    console.log('No issues found in response.');
+  }
 })
+.catch(error => {
+  console.error('Error fetching issues:', error);
+});
+
 .catch(err => console.error(err));
 
   } catch (error) {
