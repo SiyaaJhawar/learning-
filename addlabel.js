@@ -75,16 +75,13 @@ async function compareCommitCommentWithJiraIssue() {
    
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({
-    "update": {
-      "labels": [
+ body: JSON.stringify({
+  "update": {
+    "labels": [
       {
-        "add": ["int_deploy"]
+        "set": [int_deploy]
       }
     ]
-    },
-    "fields": {
-    "summary": "Updated issue summary"
   }
 })
           .then(response => {
