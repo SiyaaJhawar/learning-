@@ -76,7 +76,7 @@ async function compareCommitCommentWithJiraIssue() {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    "update": {
+    "fields": {
       "labels": [
         {
           "add": "int_deploy"
