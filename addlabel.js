@@ -27,48 +27,20 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    async function addLabelToIssue(defectId) {
+   async function getAllIssuesForProject(projectKey) {
   try {
-    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=SWT`, {
+    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=${projectKey}`, {
       headers: {
         "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
          "Accept": "application/json"
       }
     });
-   console.log(`Username: ${jiraUsername}`);
-console.log(`API Token: ${jiraPassword}`);
-    // check if there are any issues with the provided defect ID
-    const matchingIssues = issueResponse.data.issues.filter(issue => issue.key.startsWith(defectId));
-    if (matchingIssues.length === 0) {
-      console.log(`Jira issue ${defectId} not found`);
-      return;
-    }
+   const projectKey = 'SWT'; // example project key
+const issues = await getAllIssuesForProject(projectKey);
+console.log(issues); // array of issue objects
 
-    // add the label to the first matching issue
-    const issueKey = matchingIssues[0].key;
-    const labelResponse = await axios.post(`${jiraUrl}/issue/${issueKey}/labels`, { "add": ["int_deploy"] }, {
-      headers: {
-        "Authorization": `Basic ${Buffer.from(`${jiraUsername}:${jiraPassword}`).toString('base64')}`,
-        "Content-Type": "application/json"
-      }
-    });
-    console.log(`Label added to Jira issue ${issueKey}`);
-  } catch (err) {
-    console.error(`Failed to add label to Jira issue ${defectId}`, err);
-  }
-}
+  
 
-    async function addLabelsToIssues() {
-      for (const defectId of defectIds) {
-        await addLabelToIssue(defectId);
-      }
-    }
-
-    addLabelsToIssues();
-
-  } catch (err) {
-    console.error(`Failed to compare commit comments with Jira issues: ${err}`);
-  }
-}
+   
 
 compareCommitCommentWithJiraIssue();
