@@ -85,7 +85,7 @@ async function compareCommitCommentWithJiraIssue() {
     },
     "fields": {
     "summary": "Updated issue summary"
-  })
+  }
 })
           .then(response => {
             console.log(
