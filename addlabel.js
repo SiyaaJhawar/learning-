@@ -17,11 +17,13 @@ const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
 async function getAllIssuesForProject(projectKey) {
   try {
-    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=SWT&fields=key`, {
+    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project="SWT"', {
       headers: {
         "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
         "Accept": "application/json"
       }
+console.log(`Username: ${jiraUsername}`);
+console.log(`API Token: ${jiraPassword}`);
     });
     return issueResponse.data.issues;
   } catch (error) {
