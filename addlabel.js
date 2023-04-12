@@ -79,10 +79,12 @@ async function compareCommitCommentWithJiraIssue() {
     "update": {
       "labels": [
       {
-        "add": "int_deploy"
+        "add": ["int_deploy"]
       }
     ]
-    }
+    },
+    "fields": {
+    "summary": "Updated issue summary"
   })
 })
           .then(response => {
