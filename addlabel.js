@@ -67,7 +67,7 @@ async function compareCommitCommentWithJiraIssue() {
         const newLabel = 'int_deploy'; 
 
                   fetch(`https://swgup.atlassian.net/rest/api/3/issue/${issueKey}`, {
-  method: 'PUT',
+  method: 'GET',
   headers: {
     'Authorization': `Basic ${Buffer.from(
       'jiraUsername:<jiraapitoken>'
