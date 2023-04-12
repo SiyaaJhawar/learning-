@@ -13,7 +13,7 @@ import fetch from 'node-fetch';
 
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
 const jiraUsername = process.env.JIRA_USERNAME;
-const jiraPassword = process.env.JIRA_API_TOKEN;
+const jiraapitoken = process.env.JIRA_API_TOKEN;
 const username = process.env.GITHUB_USERNAME;
 const password = process.env.GITHUB_API_TOKEN;
 
@@ -37,7 +37,7 @@ const commitsResponse = await axios.get(githubUrl, {
       method: 'GET',
       headers: {
         'Authorization': `Basic ${Buffer.from(
-          'jiraUsername:<jiraPassword>'
+          'jiraUsername:<jiraapitoken>'
         ).toString('base64')}`,
         'Accept': 'application/json'
       }
