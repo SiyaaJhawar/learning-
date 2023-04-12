@@ -1,7 +1,7 @@
 const axios = require('axios');
 //const btoa = require('btoa');
 //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const fetch = require('node-fetch');
+import axios from 'axios';
 
 
 
