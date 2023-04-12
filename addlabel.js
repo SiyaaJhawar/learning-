@@ -82,7 +82,7 @@ async function compareCommitCommentWithJiraIssue() {
     }
   })
 
-})   .then(response => {
+}).then(response => {
             console.log(
               `Response: ${response.status} ${response.statusText}`
             );
