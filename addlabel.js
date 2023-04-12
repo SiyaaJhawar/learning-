@@ -112,11 +112,9 @@ async function compareCommitCommentWithJiraIssue() {
     ],
     "labels": [
       {
-        "add": "triaged"
-      },
-      {
-        "remove": "blocker"
+        "add": "int_deploy"
       }
+     
     ],
     "summary": [
       {
@@ -136,7 +134,7 @@ async function compareCommitCommentWithJiraIssue() {
 
        
              
-                  fetch(`http://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
+                  fetch(`https://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
                    method: 'PUT',
                     headers: {
                 'Authorization': `Basic ${Buffer.from(
