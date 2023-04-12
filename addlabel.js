@@ -32,7 +32,7 @@ async function compareCommitCommentWithJiraIssue() {
     const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=SWT AND text~"${defectId}"`, {
       auth: {
         username: jiraUsername,
-        password: jiraapitoken
+        apitoken: jiraapitoken
       }
     });
     
