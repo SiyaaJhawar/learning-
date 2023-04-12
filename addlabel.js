@@ -42,7 +42,7 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    const projectKey = 'SWT'; // example project key
+    const projectKey = 'swatigup'; // example project key
     const issues = await getAllIssuesForProject(projectKey);
     const matchingIssues = issues.filter(issue => defectIds.includes(issue.key));
     console.log(`Found the following issues in Jira for the defect IDs: ${matchingIssues.map(issue => issue.key)}`);
