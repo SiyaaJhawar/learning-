@@ -64,40 +64,39 @@ async function compareCommitCommentWithJiraIssue() {
 
         // Add label to the matching issues
         matchingIssueKeys.forEach(issueKey => {
-          const url = `https://swgup.atlassian.net/rest/api/3/label`;
-          const data = JSON.stringify({ labels: ['int_deploy'] });
-
-          fetch(url, {
-            method: 'POST',
-            headers: {
-              'Authorization': `Basic ${Buffer.from(
-                `${jiraUsername}:${jiraapitoken}`
-              ).toString('base64')}`,
-              'Content-Type': 'application/json'
-            },
-            body: data
-          })
-          .then(response => {
-            console.log(
-              `Response: ${response.status} ${response.statusText}`
-            );
-            if (response.ok) {
-              console.log(`Added label to issue ${issueKey}.`);
-            } else {
-              console.log(`Failed to add label to issue ${issueKey}.`);
-            }
-          })
-          .catch(error => {
-            console.error(`Error adding label to issue ${issueKey}:`, error);
-          });
-        });
-      } else {
-        console.log('No issues found in response.');
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching issues:', error);
-    });
+         fetch(`https://swgup.atlassian.net/rest/api/3/issue/${issueKey}`, {
+  method: 'PUT',
+  headers: {
+    'Authorization': `Basic ${Buffer.from(
+      'jiraUsername:<jiraapitoken>'
+    ).toString('base64')}`,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "update": {
+      "labels": [
+        {
+          "add": int_deploy
+        }
+      ]
+    }
+  })
+})
+.then(response => {
+  console.log(
+    `Response: ${response.status} ${response.statusText}`
+  );
+  if (response.ok) {
+    console.log(`Successfully added label '${labelToAdd}' to issue '${issueKey}'.`);
+  } else {
+    console.log(`Failed to add label to issue '${issueKey}'.`);
+  }
+})
+.catch(error => {
+  console.error('Error adding label to issue:', error);
+});
+    
   } catch (error) {
     console.error(error);
   }
