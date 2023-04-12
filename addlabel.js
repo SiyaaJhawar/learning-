@@ -36,5 +36,10 @@ async function compareCommitCommentWithJiraIssue() {
     console.error(error);
   }
 }
-const matchingIssues = await compareCommitCommentWithJiraIssue();
-console.log(matchingIssues); // array of matching issue objects
+async function getMatchingIssues() {
+  const matchingIssues = await compareCommitCommentWithJiraIssue();
+  console.log(matchingIssues);
+}
+
+getMatchingIssues(); // call the function to retrieve and log the matching issues
+
