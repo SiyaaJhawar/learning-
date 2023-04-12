@@ -15,6 +15,20 @@ const password = process.env.GITHUB_API_TOKEN;
 
 const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
+async function getAllIssuesForProject(projectKey) {
+  try {
+    const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=${projectKey}`, {
+      headers: {
+        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
+        "Accept": "application/json"
+      }
+    });
+    return issueResponse.data.issues;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 async function compareCommitCommentWithJiraIssue() {
   try {
     const commitsResponse = await axios.get(githubUrl, {
