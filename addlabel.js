@@ -32,26 +32,27 @@ const commitsResponse = await axios.get(githubUrl, {
     const commentTexts = commitsResponse.data.map(comment => comment.body);
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
-fetch('https://swgup.atlassian.net/rest/api/3/search', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Basic ${Buffer.from(
-          'jiraUsername:<jiraPassword>'
-        ).toString('base64')}`,
-        'Accept': 'application/json'
-      }
-    })
-      .then(response => {
-        console.log(
-          `Response: ${response.status} ${response.statusText}`
-        );
-        return response.json(); // Parse the response as JSON
-      })
-      .then(data => {
-        const issueKeys = data.issues.map(issue => issue.key); // Extract the keys of all the issues
-        console.log(`Found the following issue keys: ${issueKeys}`);
-      })
-      .catch(err => console.error(err));
+fetch('https://swgup.atlassian.net/rest/api/3/search?jql=project=SWT&fields=key', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Basic ${Buffer.from(
+      'jiraUsername:<jiraPassword>'
+    ).toString('base64')}`,
+    'Accept': 'application/json'
+  }
+})
+.then(response => {
+  console.log(
+    `Response: ${response.status} ${response.statusText}`
+  );
+  return response.json(); // Parse the response as JSON
+})
+.then(data => {
+  const issueKeys = data.issues.map(issue => issue.key); // Extract the keys of all the issues
+  console.log(`Found the following issue keys: ${issueKeys}`);
+})
+.catch(err => console.error(err));
+
   } catch (error) {
     console.error(error);
   }
