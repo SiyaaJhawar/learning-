@@ -9,7 +9,7 @@ const btoa = require('btoa');
 const jiraUrl = 'https://swgup.atlassian.net/rest/api/2';
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
 const jiraUsername = process.env.JIRA_USERNAME;
-const jiraapitoken = process.env.JIRA_API_TOKEN;
+const jiraPassword = process.env.JIRA_API_TOKEN;
 const username = process.env.GITHUB_USERNAME;
 const password = process.env.GITHUB_API_TOKEN;
 
@@ -32,7 +32,7 @@ async function compareCommitCommentWithJiraIssue() {
     const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=SWT AND text~"${defectId}"`, {
       auth: {
         username: jiraUsername,
-        apitoken: jiraapitoken
+        password: jiraPassword
       }
     });
     
