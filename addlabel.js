@@ -68,7 +68,7 @@ async function compareCommitCommentWithJiraIssue() {
           const data = JSON.stringify({ labels: ['int_deploy'] });
 
           fetch(url, {
-            method: 'GET',
+            method: 'POST',
             headers: {
               'Authorization': `Basic ${Buffer.from(
                 `${jiraUsername}:${jiraapitoken}`
