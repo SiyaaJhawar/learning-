@@ -32,6 +32,7 @@ async function compareCommitCommentWithJiraIssue() {
     const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=SWT`, {
       headers: {
         "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
+         "Accept": "application/json"
       }
     });
    console.log(`Username: ${jiraUsername}`);
