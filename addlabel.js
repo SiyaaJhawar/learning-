@@ -66,19 +66,25 @@ async function compareCommitCommentWithJiraIssue() {
         matchingIssueKeys.forEach(issueKey => {
 
 
-                  const url = `https://swgup.atlassian.net/rest/api/3/issue/${issueKey}`;
-               const data = JSON.stringify({ labels: ['int_deploy'] });
-
-          fetch(url, {
-            method: 'GET',
-            headers: {
-              'Authorization': `Basic ${Buffer.from(
-                `${jiraUsername}:${jiraapitoken}`
-              ).toString('base64')}`,
-              'Content-Type': 'application/json'
-            },
-            body: data
-          })
+                  fetch(`https://swgup.atlassian.net/rest/api/3/issue/${issueKey}`, {
+  method: 'PUT',
+  headers: {
+    'Authorization': `Basic ${Buffer.from(
+      'jiraUsername:<jiraapitoken>'
+    ).toString('base64')}`,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "update": {
+      "labels": [
+        {
+          "add": int_deploy
+        }
+      ]
+    }
+  })
+})
           .then(response => {
             console.log(
               `Response: ${response.status} ${response.statusText}`
