@@ -64,74 +64,7 @@ async function compareCommitCommentWithJiraIssue() {
 
         // Add label to the matching issues
         matchingIssueKeys.forEach(issueKey => {
-         const bodyData = `{
-  "fields": {
-    "customfield_10000": "Investigation underway",
-    "customfield_10010": 1,
-    "summary": "Completed orders still displaying in pending"
-  },
-  "historyMetadata": {
-    "activityDescription": "Complete order processing",
-    "actor": {
-      "avatarUrl": "http://mysystem/avatar/tony.jpg",
-      "displayName": "Tony",
-      "id": "tony",
-      "type": "mysystem-user",
-      "url": "http://mysystem/users/tony"
-    },
-    "cause": {
-      "id": "myevent",
-      "type": "mysystem-event"
-    },
-    "description": "From the order testing process",
-    "extraData": {
-      "Iteration": "10a",
-      "Step": "4"
-    },
-    "generator": {
-      "id": "mysystem-1",
-      "type": "mysystem-application"
-    },
-    "type": "myplugin:type"
-  },
-  "properties": [
-    {
-      "key": "key1",
-      "value": "Order number 10784"
-    },
-    {
-      "key": "key2",
-      "value": "Order number 10923"
-    }
-  ],
-  "update": {
-    "components": [
-      {
-        "set": ""
-      }
-    ],
-    "labels": [
-      {
-        "add": "int_deploy"
-      }
-     
-    ],
-    "summary": [
-      {
-        "set": "Bug in business logic"
-      }
-    ],
-    "timetracking": [
-      {
-        "edit": {
-          "originalEstimate": "1w 1d",
-          "remainingEstimate": "4d"
-        }
-      }
-    ]
-  }
-}`;
-
+      
        
              
                   fetch(`https://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
@@ -143,7 +76,12 @@ async function compareCommitCommentWithJiraIssue() {
    
     'Content-Type': 'application/json'
   },
-  body: bodyData
+  body: JSON.stringify({
+    fields: {
+      labels: int_deploy
+    }
+  })
+
 })   .then(response => {
             console.log(
               `Response: ${response.status} ${response.statusText}`
