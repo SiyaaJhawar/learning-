@@ -64,11 +64,11 @@ async function compareCommitCommentWithJiraIssue() {
 
         // Add label to the matching issues
         matchingIssueKeys.forEach(issueKey => {
-          const url = `https://swgup.atlassian.net/rest/api/3/issue/${issueKey}/labels`;
+          const url = `https://swgup.atlassian.net/rest/api/3/label`;
           const data = JSON.stringify({ labels: ['int_deploy'] });
 
           fetch(url, {
-            method: 'POST',
+            method: 'GET',
             headers: {
               'Authorization': `Basic ${Buffer.from(
                 `${jiraUsername}:${jiraapitoken}`
