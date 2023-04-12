@@ -30,9 +30,8 @@ async function compareCommitCommentWithJiraIssue() {
     async function addLabelToIssue(defectId) {
   try {
     const issueResponse = await axios.get(`${jiraUrl}/search?jql=project=SWT AND text~"${defectId}"`, {
-      auth: {
-        username: jiraUsername,
-        password: jiraPassword
+      headers: {
+        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
       }
     });
     
