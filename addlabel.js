@@ -49,7 +49,7 @@ fetch('https://swgup.atlassian.net/rest/api/3/search?filter=allissues', {
   );
   return response.json(); // Parse the response as JSON
 })
-.then(data => {
+
  .then(data => {
   if (data.issues && data.issues.length > 0) {
     const issueKeys = data.issues.map(issue => issue.key); // Extract the keys of all the issues
