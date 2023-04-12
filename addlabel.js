@@ -36,7 +36,7 @@ fetch('https://swgup.atlassian.net/rest/api/3/search?jql=project=SWT&fields=key'
   method: 'GET',
   headers: {
     'Authorization': `Basic ${Buffer.from(
-      'jiraUsername:<jiraPassword>'
+      'swatig139@gmail.com:<ATATT3xFfGF053Em-PIp593sRrtr31Y7rnbGV88H7pQS7r64NWdquxNgKTWdLp7KafEYRWj2WWhApnOgDi-i298NHHht3ddIdgz3vPbu8edbjpA9bFaYD02a18I4ct39ps3v8I9o_PDUhCO-fitS7MgHSLTfaArHmxIL-QCg8BkYBolqvNyw5ho=F4E7CF53>'
     ).toString('base64')}`,
     'Accept': 'application/json'
   }
