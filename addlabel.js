@@ -15,23 +15,6 @@ const password = process.env.GITHUB_API_TOKEN;
 
 const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
-async function getAllIssueKeys() {
-  try {
-    const response = await axios.get(`${jiraUrl}/search?jql=allissues`), {
-      headers: {
-        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
-         "Accept": "application/json"
-      }
-    });
-    const issueKeys = response.data.issues.map(issue => issue.key);
-    console.log(`Found the following issue keys in Jira: ${issueKeys}`);
-    return issueKeys;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-
 async function compareCommitCommentWithJiraIssue() {
   try {
     const commitsResponse = await axios.get(githubUrl, {
@@ -44,9 +27,14 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    const projectKey = 'SWT'; // example project key
-    const issues = await getAllIssuesForProject(projectKey);
-    const matchingIssues = issues.filter(issue => defectIds.includes(issue.key));
+    ;
+    const issuesResponse = await axios.get(`${jiraUrl}/search?filter=allissues`, {
+      headers: {
+        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
+        "Accept": "application/json"
+      }
+    });
+    const matchingIssues = issuesResponse.data.issues.filter(issue => defectIds.includes(issue.key));
     console.log(`Found the following issues in Jira for the defect IDs: ${matchingIssues.map(issue => issue.key)}`);
     return matchingIssues;
   } catch (error) {
