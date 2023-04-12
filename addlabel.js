@@ -15,23 +15,21 @@ const password = process.env.GITHUB_API_TOKEN;
 
 const defectRegex = /([A-Z]{1}[A-Z]{2,})-\d+/g;
 
-async function getAllIssues() {
+async function getAllIssuesForProject(projectKey) {
   try {
-    const response = await axios.get(`${jiraUrl}/search?jql=filter=allissues`, {
-      auth: {
-        username,
-        password
-      },
+    const jql = `project=${SWT}`;
+    const response = await axios.get(`${jiraUrl}/search?jql=${jql}`, {
       headers: {
+        "Authorization": `Basic ${btoa(`${jiraUsername}:${jiraPassword}`)}`,
         "Accept": "application/json"
       }
     });
     return response.data.issues;
   } catch (error) {
     console.error(error);
-    return [];
   }
 }
+
 async function compareCommitCommentWithJiraIssue() {
   try {
     const commitsResponse = await axios.get(githubUrl, {
@@ -44,7 +42,8 @@ async function compareCommitCommentWithJiraIssue() {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
 
-    const issues = await getAllIssues();
+    const projectKey = 'SWT'; // example project key
+    const issues = await getAllIssuesForProject(projectKey);
     const matchingIssues = issues.filter(issue => defectIds.includes(issue.key));
     console.log(`Found the following issues in Jira for the defect IDs: ${matchingIssues.map(issue => issue.key)}`);
     return matchingIssues;
@@ -59,4 +58,6 @@ async function getMatchingIssues() {
 }
 
 getMatchingIssues(); // call the function to retrieve and log the matching issues
+
+
 
