@@ -33,7 +33,7 @@ const commitsResponse = await axios.get(githubUrl, {
     const defectIds = commentTexts.flatMap(text => text.match(defectRegex));
     console.log(`Found the following defect IDs in commit comments: ${defectIds}`);
    console.log(`Username: ${jiraUsername}`);
-console.log(`Password: ${jiraapitoken}`);
+console.log(`Apitoken: ${jiraapitoken}`);
 fetch('https://swgup.atlassian.net/rest/api/3/search?filter=allissues', {
   method: 'GET',
   headers: {
