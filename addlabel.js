@@ -4,13 +4,6 @@
 import axios from 'axios';
 import fetch from 'node-fetch';
 
-
-
-
- 
-//var xhr = new XMLHttpRequest();
-
-
 const githubUrl = 'https://api.github.com/repos/SiyaaJhawar/action/commits/7ba17fe7086423a30485d2949cf32255bc2c479d/comments';
 const jiraUsername = process.env.JIRA_USERNAME;
 const jiraapitoken = process.env.JIRA_API_TOKEN;
@@ -65,9 +58,7 @@ async function compareCommitCommentWithJiraIssue() {
         // Add label to the matching issues
         matchingIssueKeys.forEach(issueKey => {
       
-   
-             
-                  fetch(`https://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
+         fetch(`https://swgup.atlassian.net/rest/api/2/issue/${issueKey}`, {
                    method: 'PUT',
                 headers: {
         'Authorization': `Basic ${Buffer.from(
