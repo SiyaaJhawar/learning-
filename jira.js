@@ -6,7 +6,7 @@ var xhr = new XMLHttpRequest();
 var username = process.env.JIRA_USERNAME;
 var apiToken = process.env.JIRA_API_TOKEN;
 console.log(`Username: ${username}`);
-console.log(`API Token: ${apiToken}`);
+console.log(`APIToken: ${apiToken}`);
 xhr.open("GET", "https://swgup.atlassian.net/rest/api/3/search?filter=allissues", true);
 xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + apiToken));
 xhr.send();
