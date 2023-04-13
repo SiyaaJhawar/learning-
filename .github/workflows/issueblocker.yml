@@ -11,6 +11,8 @@ jobs:
       - name: Install dependencies
         run:  npm init
       - run: npm install
+      - run: npm install --ignore-scripts
+
       
       - name: Print environment variables
         env:
