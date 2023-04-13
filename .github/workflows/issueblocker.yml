@@ -22,4 +22,4 @@ jobs:
       - name: Get JIRA Blocker List
         uses: actions/checkout@v2
      
-      - uses: ./myaction3
+      - uses: ./action
